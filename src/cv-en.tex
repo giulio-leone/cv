@@ -1,0 +1,90 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% --- STYLE ---
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78, top=1.8cm, bottom=1.5cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
+\usepackage{fontawesome5}
+
+% --- PERSONAL DATA ---
+\name{Giulio}{Leone}
+\title{AI Engineer | GenAI \& LLM Specialist}
+\address{Rome, Italy}{}{Willing to Relocate to Dubai / UAE}
+\phone[mobile]{+39~366~141~0914~~\small{(WhatsApp/Telegram)}}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+
+% --- DOCUMENT ---
+\begin{document}
+
+\makecvtitle
+
+% --- PROFESSIONAL SUMMARY ---
+\section{Professional Summary}
+\cvitem{}{AI Engineer with \textbf{5+ years of experience} designing and deploying end-to-end Generative AI solutions. Specialized in \textbf{RAG systems}, \textbf{Agentic AI}, \textbf{Generative UI}, and production-grade LLM integration. Strong Full-Stack background (Python, React/Next.js) enabling delivery of complete AI products — from model to user interface. \textbf{66+ technical certifications} (AWS, Microsoft, Google, Oracle, IBM, MongoDB, Neo4j). Master's degree in Management Engineering focused on Digital Transformation with thesis on Generative UI and RAG systems.}
+
+% --- PROFESSIONAL EXPERIENCE ---
+\section{Professional Experience}
+
+\cventry{Jan 2020 -- Present}{AI Engineer \& Full-Stack Consultant}{Independent Consultant}{Rome, Italy}{}{
+Technical lead for AI architecture and end-to-end software development for clients in \textbf{E-commerce, FinTech, and IoT} sectors.
+\vspace{0.3em}
+\begin{itemize}
+    \item \textbf{Agentic AI \& Generative UI:} Designed an OmniApp powered by autonomous AI agents and Generative UI, dynamically rendering React components in real-time via LLMs (LangChain, Vercel AI SDK). Multi-agent orchestration with fallback handling and response streaming, \textbf{reducing UI development time by $\sim$40\%}.
+    \item \textbf{Enterprise RAG Systems:} Built vector-based (Pinecone, ChromaDB) and hybrid (BM25 + embedding) RAG pipelines with iterative disambiguation. \textbf{Reduced hallucinations by $\sim$30\%} on enterprise chatbots indexing 50K+ documents.
+    \item \textbf{Full-Stack Platforms:} Delivered 5+ enterprise dashboards (React + Redux) and high-performance backends (Python FastAPI/Django). E-commerce and IoT platforms achieving \textbf{response times $<$800ms} through multi-layer caching (Redis + CDN).
+    \item \textbf{Legacy Modernization:} Led migration of COBOL codebase ($\sim$50K LOC) to Python, leveraging AI-assisted translation to \textbf{accelerate rewriting by $\sim$60\%}.
+    \item \textbf{AI-Augmented Development:} Daily use of GitHub Copilot, Cursor, Claude Code, and LLM-based tooling for development, debugging, and automated test generation.
+    \item \textbf{DevOps \& Cloud:} CI/CD pipelines (GitHub Actions), Docker/Kubernetes containerization, deployments on Azure and AWS. OWASP compliance for enterprise applications.
+\end{itemize}
+}
+
+% --- KEY AI PROJECTS ---
+\section{Key AI Projects}
+\cvitem{\textbf{OmniApp GenUI}}{Generative UI application with AI agents rendering React components in real-time. Stack: Next.js, Vercel AI SDK, LangChain, GPT-4. \textit{Reduced time-to-feature by 40\%.}}
+\cvitem{\textbf{Enterprise RAG}}{Semantic search system for 50K+ enterprise documents. Hybrid architecture (vector + BM25) with iterative disambiguation. \textit{+30\% accuracy vs. pure keyword search.}}
+\cvitem{\textbf{IoT Dashboard}}{Real-time industrial IoT monitoring platform. React + FastAPI + WebSocket + TimescaleDB. \textit{Processing 10K+ data points/sec with $<$200ms latency.}}
+
+% --- TECHNICAL SKILLS ---
+\section{Technical Skills}
+\cvitem{\textbf{AI \& GenAI}}{LLM Integration (OpenAI, Anthropic, LangChain, LangGraph), Vercel AI SDK, RAG (Vector + BM25 Hybrid), Agentic AI (CrewAI, AutoGen), Generative UI, Prompt Engineering}
+\cvitem{\textbf{ML \& Data}}{Python (Pandas, NumPy, Scikit-learn, Keras), Vector DB (Pinecone, ChromaDB, Neo4j), Graph DB}
+\cvitem{\textbf{Full-Stack}}{React.js/Next.js, TypeScript, Angular, Vue.js, Tailwind CSS, Django, FastAPI, Node.js, GraphQL}
+\cvitem{\textbf{Cloud/DevOps}}{AWS, Microsoft Azure, Docker, Kubernetes, CI/CD (GitHub Actions), Terraform}
+\cvitem{\textbf{AI Tooling}}{GitHub Copilot, Cursor, Claude Code, OpenAI Codex, Windsurf}
+
+% --- EDUCATION ---
+\section{Education}
+\cventry{Expected 2026}{Master's Degree in Management Engineering -- Digital Transformation}{Università Unimercatorum}{Italy}{GPA: 27/30}{
+\begin{itemize}
+    \item \textbf{Research thesis:} Framework for Generative UI and embedding-free RAG for enterprise systems.
+    \item \textbf{Publications:} 2 papers under peer review for international journals.
+\end{itemize}
+}
+\vspace{0.3em}
+\cventry{2018 -- 2021}{Bachelor's Degree in Management Engineering (L-9)}{Università Niccolò Cusano}{Italy}{}{
+Research thesis on K-Nearest Neighbors (KNN) algorithm applications.
+}
+
+% --- CERTIFICATIONS ---
+\section{Certifications (Selection from 66+)}
+\cvitem{\textbf{AI \& GenAI}}{AWS Certified GenAI Developer Professional $\cdot$ Azure AI Engineer Associate $\cdot$ Oracle OCI GenAI Professional $\cdot$ IBM Build Multimodal GenAI Apps $\cdot$ Oracle Fusion AI Agent Studio}
+\cvitem{\textbf{Data \& ML}}{IBM Data Science Professional $\cdot$ Oracle OCI Data Science Professional $\cdot$ Neo4j Graph Data Science $\cdot$ Google Data Analytics}
+\cvitem{\textbf{Cloud}}{Oracle OCI 2025 Foundations Associate $\cdot$ Oracle OCI AI Foundations Associate}
+\cvitem{\textbf{Database}}{MongoDB Associate Developer $\cdot$ Oracle AI Vector Search Professional $\cdot$ Neo4j Certified Professional}
+\cvitem{\textbf{Security}}{Google Cybersecurity Professional $\cdot$ Microsoft AI \& ML Foundations}
+\cvitem{}{\small\textit{Full list of 66+ certifications available on LinkedIn and at} \texttt{github.com/giulioleone/cv}}
+
+% --- LANGUAGES ---
+\section{Languages}
+\cvitemwithcomment{Italian}{Native}{}
+\cvitemwithcomment{English}{C1 -- Advanced}{Daily professional use}
+
+\end{document}
