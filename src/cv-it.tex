@@ -11,11 +11,15 @@
 \usepackage{enumitem}
 \setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
 \usepackage{fontawesome5}
+\usepackage{etoolbox}
+
+% Spazio verticale nell'header tra le righe di contatto
+\patchcmd{\makecvhead}{\begin{tabular}[b]}{\vspace{0.5em}\begin{tabular}[b]}{}{}
 
 % --- DATI PERSONALI ---
 \name{Giulio}{Leone}
 \title{Senior AI Engineer --- Generative AI \& Sistemi LLM}
-\address{Roma, Italia}{}{Disponibile al trasferimento a Dubai / UAE --- Da Q2 2025}
+\address{Roma, Italia}{}{Disponibile al trasferimento a Dubai / UAE --- Disponibilit\`a immediata}
 \phone[mobile]{+39~366~141~0914}
 \email{giulioleone097@gmail.com}
 \homepage{giulioleone.com}
@@ -90,7 +94,7 @@ Tesi sull'applicazione del machine learning: algoritmo K-Nearest Neighbors (KNN)
 % --- FOOTER ---
 \vfill
 \begin{center}
-    \footnotesize \textit{Cittadino UE --- Disponibile per visto lavorativo UAE --- Trasferimento possibile entro 30 giorni dall'offerta.}
+    \footnotesize \textit{Cittadino UE --- Disponibile per visto lavorativo UAE --- Disponibilit\`a immediata al trasferimento.}
 \end{center}
 
 \end{document}

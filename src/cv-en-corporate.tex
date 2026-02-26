@@ -11,11 +11,15 @@
 \usepackage{enumitem}
 \setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
 \usepackage{fontawesome5}
+\usepackage{etoolbox}
+
+% Add vertical space in the header between contact info lines
+\patchcmd{\makecvhead}{\begin{tabular}[b]}{\vspace{0.5em}\begin{tabular}[b]}{}{}
 
 % --- PERSONAL DATA ---
 \name{Giulio}{Leone}
 \title{Senior AI Engineer --- Generative AI \& LLM Systems}
-\address{Rome, Italy}{}{Relocating to Dubai / UAE --- Available Q2 2025}
+\address{Rome, Italy}{}{Relocating to Dubai / UAE --- Immediately Available}
 \phone[mobile]{+39~366~141~0914}
 \email{giulioleone097@gmail.com}
 \homepage{giulioleone.com}
@@ -90,7 +94,7 @@ Thesis on applied machine learning: K-Nearest Neighbors (KNN) algorithm for clas
 % --- FOOTER ---
 \vfill
 \begin{center}
-    \footnotesize \textit{EU citizen --- Open to UAE work visa sponsorship --- Available for relocation within 30 days of offer.}
+    \footnotesize \textit{EU citizen --- Open to UAE work visa sponsorship --- Immediately available for relocation.}
 \end{center}
 
 \end{document}
