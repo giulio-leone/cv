@@ -1,0 +1,1098 @@
+{
+  "metadata": {
+    "owner": "Giulio Leone",
+    "totalCertifications": 66,
+    "lastUpdated": "2026-02-26",
+    "note": "Includes AWS Certified Generative AI Developer Professional (Feb 2026)"
+  },
+  "categories": {
+    "AI & GenAI": {
+      "count": 28,
+      "certifications": [
+        {
+          "title": "AWS Certified Generative AI Developer – Professional",
+          "issuer": "Amazon Web Services",
+          "issueDate": "Feb 2026",
+          "expiryDate": "Feb 2029",
+          "credentialId": null,
+          "credentialUrl": "https://aws.amazon.com/it/certification/certified-generative-ai-developer-professional/"
+        },
+        {
+          "title": "Generative AI Leader",
+          "issuer": "Google Cloud",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "6OYVGYZ7JG1U",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/6OYVGYZ7JG1U"
+        },
+        {
+          "title": "Gen AI Apps: Transform Your Work",
+          "issuer": "Google Cloud",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "QM310DCG54V9",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/QM310DCG54V9"
+        },
+        {
+          "title": "Gen AI: Navigate the Landscape",
+          "issuer": "Google Cloud",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "UC6NKNBM1EJ9",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/UC6NKNBM1EJ9"
+        },
+        {
+          "title": "Gen AI: Unlock Foundational Concepts",
+          "issuer": "Google Cloud",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "Y8NG1I29YEE7",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/Y8NG1I29YEE7"
+        },
+        {
+          "title": "Gen AI: Beyond the Chatbot",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "FHE245Q43QER",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/FHE245Q43QER"
+        },
+        {
+          "title": "Google Prompting Essentials",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "W3BMWEOEIUZ4",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/W3BMWEOEIUZ4"
+        },
+        {
+          "title": "Resta al passo con l'AI",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "12W8786EYGXB",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/12W8786EYGXB"
+        },
+        {
+          "title": "Progetta prompt per le attività lavorative quotidiane:",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "606BYZ3IJCHC",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/606BYZ3IJCHC"
+        },
+        {
+          "title": "Usa l'AI in modo responsabile",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "IO1TTSM394ZK",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/IO1TTSM394ZK"
+        },
+        {
+          "title": "Scopri l'arte del prompting",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "QRE9NNLZTI7K",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/QRE9NNLZTI7K"
+        },
+        {
+          "title": "Massimizza la produttività con gli strumenti di AI",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "DPFO5UM24OR1",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/DPFO5UM24OR1"
+        },
+        {
+          "title": "Introduzione all'AI",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "KK1G8RS50WC4",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/KK1G8RS50WC4"
+        },
+        {
+          "title": "Foundations of AI and Machine Learning",
+          "issuer": "Microsoft",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "UDN5UC2EP5IC",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/UDN5UC2EP5IC"
+        },
+        {
+          "title": "Getting Started with AWS Generative AI for Developers",
+          "issuer": "Amazon Web Services",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "X354FA8GYJ0Y",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/X354FA8GYJ0Y"
+        },
+        {
+          "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "WJRH3TBF6SDE",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/WJRH3TBF6SDE"
+        },
+        {
+          "title": "Agentic AI with LangChain and LangGraph",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "X1Z7N3TGPFML",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/X1Z7N3TGPFML"
+        },
+        {
+          "title": "Fundamentals of Building AI Agents",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "29PPFV7FXGFZ",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/29PPFV7FXGFZ"
+        },
+        {
+          "title": "Build Multimodal Generative AI Applications",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "BXT08WS7ZAC5",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/BXT08WS7ZAC5"
+        },
+        {
+          "title": "Advanced RAG with Vector Databases and Retrievers",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "75H11NTANA2Q",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/75H11NTANA2Q"
+        },
+        {
+          "title": "Vector Databases for RAG: An Introduction",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "3Y1W60X6AXZT",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/3Y1W60X6AXZT"
+        },
+        {
+          "title": "Build RAG Applications: Get Started",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "98SFKC8YDGGE",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/98SFKC8YDGGE"
+        },
+        {
+          "title": "Oracle AI Vector Search Professional",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-184-25",
+          "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7376684&registrationID=asx-75198c2f-0fe2-4aef-a506-7132a925a74b"
+        },
+        {
+          "title": "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-1122-25",
+          "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7358559&registrationID=asx-485db06e-09e5-42d9-890c-1547938fd82b"
+        },
+        {
+          "title": "AI Agents with MongoDB",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBhewntdmzsi",
+          "credentialUrl": "https://learn.mongodb.com/c/JS84S8IsSHSBZ8ltmJQdnA"
+        },
+        {
+          "title": "Vector Search Fundamentals",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBjxde5ig5b7",
+          "credentialUrl": "https://learn.mongodb.com/c/cDTqVRS2Rj-IQB7ossFurg"
+        },
+        {
+          "title": "Oracle Fusion AI Agent Studio Foundations Associate - Rel 1",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-1145-1",
+          "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1145-1"
+        },
+        {
+          "title": "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-1127-25",
+          "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1127-25"
+        }
+      ]
+    },
+    "Data & ML": {
+      "count": 7,
+      "certifications": [
+        {
+          "title": "Google Data Analytics",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "MAST3I408LMG",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MAST3I408LMG"
+        },
+        {
+          "title": "IA generativa: elevare la sua carriera nella scienza dei dati",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "CR88H4LG9BOC",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/CR88H4LG9BOC"
+        },
+        {
+          "title": "Che cos'è la Scienza dei dati?",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "M2PQMJU29YNG",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M2PQMJU29YNG"
+        },
+        {
+          "title": "Introduzione all'apprendimento profondo e alle reti neurali con Keras",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "ZL0TUFOTPVFL",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/ZL0TUFOTPVFL"
+        },
+        {
+          "title": "Apprendimento automatico con Python",
+          "issuer": "IBM",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "SLUQHZG87B09",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/SLUQHZG87B09"
+        },
+        {
+          "title": "Oracle Cloud Infrastructure 2025 Data Science Professional",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-1110-25",
+          "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7376684&registrationID=asx-9dc94648-95d2-45f4-b605-01a24ba4a602"
+        },
+        {
+          "title": "Neo4j Graph Data Science Certification",
+          "issuer": "Neo4j",
+          "issueDate": "Jun 2025",
+          "expiryDate": null,
+          "credentialId": "acf7149a-05df-4ae5-8c95-7573e1c96c7b",
+          "credentialUrl": "https://graphacademy.neo4j.com/c/acf7149a-05df-4ae5-8c95-7573e1c96c7b/"
+        }
+      ]
+    },
+    "Cloud & Infrastructure": {
+      "count": 7,
+      "certifications": [
+        {
+          "title": "Introduction to Security Principles in Cloud Computing",
+          "issuer": "Google Cloud Security",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "TIFJWHIVN4HF",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/TIFJWHIVN4HF"
+        },
+        {
+          "title": "Certificazione Microsoft: Ingegnere Associato di Intelligenza Artificiale di Azure",
+          "issuer": "Microsoft",
+          "issueDate": "Oct 2025",
+          "expiryDate": "Oct 2026",
+          "credentialId": "EDB47B59AACA2E6A",
+          "credentialUrl": "https://learn.microsoft.com/api/credentials/share/it-it/GiulioLeone/EDB47B59AACA2E6A?sharingId"
+        },
+        {
+          "title": "Foundations of Cybersecurity",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1D2DST5QC5WY",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/1D2DST5QC5WY"
+        },
+        {
+          "title": "Foundations: Data, Data, Everywhere",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1RXH0A6WTOOC",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/1RXH0A6WTOOC"
+        },
+        {
+          "title": "Velocizza l'analisi dei dati e la creazione di presentazioni:",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "HQXN7DV5YMIW",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/HQXN7DV5YMIW"
+        },
+        {
+          "title": "MongoDB Associate Developer",
+          "issuer": "MongoDB",
+          "issueDate": null,
+          "expiryDate": null,
+          "credentialId": null,
+          "credentialUrl": "https://www.credly.com/badges/37c9e9aa-66c8-459a-a266-e92bb6dd0582/linked_in_profile"
+        },
+        {
+          "title": "Oracle Cloud Infrastructure 2025 Foundations Associate",
+          "issuer": "Oracle",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "1Z0-1085-25",
+          "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1085-25"
+        }
+      ]
+    },
+    "Security & Development": {
+      "count": 4,
+      "certifications": [
+        {
+          "title": "Specializzazione Google Cybersecurity",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "T9RO89ICIV6A",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/T9RO89ICIV6A"
+        },
+        {
+          "title": "Automate Cybersecurity Tasks with Python",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "US754DH25TD2",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/US754DH25TD2"
+        },
+        {
+          "title": "Connect and Protect: Networks and Network Security",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "DW85AADGUNGB",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/DW85AADGUNGB"
+        },
+        {
+          "title": "Play It Safe: Manage Security Risks",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "H4JN1M1LBIOP",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/H4JN1M1LBIOP"
+        }
+      ]
+    },
+    "Database": {
+      "count": 11,
+      "certifications": [
+        {
+          "title": "Secure MongoDB Atlas: AuthN and AuthZ",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDB3tyl91sit2",
+          "credentialUrl": "https://learn.mongodb.com/c/RkW-9kvLSZmDL6YZq6VCCQ"
+        },
+        {
+          "title": "Secure MongoDB Self-Managed: AuthN and AuthZ",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDB1rf54f44sr",
+          "credentialUrl": "https://learn.mongodb.com/c/9RozyiXxTCuHdnOVqH36Pw"
+        },
+        {
+          "title": "Fundamentals of Data Transformation",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBwv933caodf",
+          "credentialUrl": "https://learn.mongodb.com/c/ZslT7gTiTb2nU2RVK-a-tA"
+        },
+        {
+          "title": "CRUD Operations in MongoDB",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBu3i2973ghh",
+          "credentialUrl": "https://learn.mongodb.com/c/rfQt_ARZSHCf6_D2cnyVSQ"
+        },
+        {
+          "title": "Query Optimization",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBa83t650tju",
+          "credentialUrl": "https://learn.mongodb.com/c/WcINus8_SrCgmg50GGlaBA"
+        },
+        {
+          "title": "Schema Design Optimization",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBg30xgbkqn9",
+          "credentialUrl": "https://learn.mongodb.com/c/UjqJ4rRAQFyL6DIGnZNf5A"
+        },
+        {
+          "title": "Advanced Schema Patterns and Antipatterns",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBtj45j2h0av",
+          "credentialUrl": "https://learn.mongodb.com/c/K3PiKtoJR3mIXT7iwefLIw"
+        },
+        {
+          "title": "Schema Design Patterns and Antipatterns",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDBzyiz79qzrh",
+          "credentialUrl": "https://learn.mongodb.com/c/jT2Ga83eST-ubcgMpC8z-A"
+        },
+        {
+          "title": "Relational to Document Model",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "MDB45zj55s086",
+          "credentialUrl": "https://learn.mongodb.com/c/WsMnI76LQ9eNi6_4s7ZAZQ"
+        },
+        {
+          "title": "From Relational Model (SQL) to MongoDB's Document Model",
+          "issuer": "MongoDB",
+          "issueDate": "Jul 2025",
+          "expiryDate": null,
+          "credentialId": "2f3fa325-3e3d-4042-a749-19bdbc969446",
+          "credentialUrl": "https://www.credly.com/badges/2f3fa325-3e3d-4042-a749-19bdbc969446/linked_in_profile"
+        },
+        {
+          "title": "Neo4j Certified Professional",
+          "issuer": "Neo4j",
+          "issueDate": "Jun 2025",
+          "expiryDate": null,
+          "credentialId": "99070288-d96c-4062-9c42-861f429a0beb",
+          "credentialUrl": "https://graphacademy.neo4j.com/c/99070288-d96c-4062-9c42-861f429a0beb/"
+        }
+      ]
+    },
+    "Other": {
+      "count": 9,
+      "certifications": [
+        {
+          "title": "Google UX Design",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "W6UBQK36G8KE",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/W6UBQK36G8KE"
+        },
+        {
+          "title": "Share Data Through the Art of Visualization",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "L7CPWQUFLQTW",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/L7CPWQUFLQTW"
+        },
+        {
+          "title": "Data Analysis with R Programming",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "SBKSBDDHAOJ7",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/SBKSBDDHAOJ7"
+        },
+        {
+          "title": "Analyze Data to Answer Questions",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "CIP3HEFCEENC",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/CIP3HEFCEENC"
+        },
+        {
+          "title": "Process Data from Dirty to Clean",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "5K6S7IYJMHB9",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/5K6S7IYJMHB9"
+        },
+        {
+          "title": "Ask Questions to Make Data-Driven Decisions",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "V5S9BFCIRUX4",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/V5S9BFCIRUX4"
+        },
+        {
+          "title": "Sound the Alarm: Detection and Response",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "94OO056W3MKA",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/94OO056W3MKA"
+        },
+        {
+          "title": "Assets, Threats, and Vulnerabilities",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "9N5TPHWYZTIX",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/9N5TPHWYZTIX"
+        },
+        {
+          "title": "Tools of the Trade: Linux and SQL",
+          "issuer": "Google",
+          "issueDate": "Oct 2025",
+          "expiryDate": null,
+          "credentialId": "RDQI4I397MB0",
+          "credentialUrl": "https://www.coursera.org/account/accomplishments/records/RDQI4I397MB0"
+        }
+      ]
+    }
+  },
+  "allCertifications": [
+    {
+      "title": "AWS Certified Generative AI Developer – Professional",
+      "issuer": "Amazon Web Services",
+      "issueDate": "Feb 2026",
+      "expiryDate": "Feb 2029",
+      "credentialId": null,
+      "credentialUrl": "https://aws.amazon.com/it/certification/certified-generative-ai-developer-professional/"
+    },
+    {
+      "title": "Google UX Design",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "W6UBQK36G8KE",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/W6UBQK36G8KE"
+    },
+    {
+      "title": "Google Data Analytics",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "MAST3I408LMG",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/MAST3I408LMG"
+    },
+    {
+      "title": "Share Data Through the Art of Visualization",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "L7CPWQUFLQTW",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/verify/L7CPWQUFLQTW"
+    },
+    {
+      "title": "Data Analysis with R Programming",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "SBKSBDDHAOJ7",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/SBKSBDDHAOJ7"
+    },
+    {
+      "title": "Analyze Data to Answer Questions",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "CIP3HEFCEENC",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/CIP3HEFCEENC"
+    },
+    {
+      "title": "Process Data from Dirty to Clean",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "5K6S7IYJMHB9",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/5K6S7IYJMHB9"
+    },
+    {
+      "title": "Ask Questions to Make Data-Driven Decisions",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "V5S9BFCIRUX4",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/V5S9BFCIRUX4"
+    },
+    {
+      "title": "Introduction to Security Principles in Cloud Computing",
+      "issuer": "Google Cloud Security",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "TIFJWHIVN4HF",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/TIFJWHIVN4HF"
+    },
+    {
+      "title": "Specializzazione Google Cybersecurity",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "T9RO89ICIV6A",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/T9RO89ICIV6A"
+    },
+    {
+      "title": "Automate Cybersecurity Tasks with Python",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "US754DH25TD2",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/US754DH25TD2"
+    },
+    {
+      "title": "Sound the Alarm: Detection and Response",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "94OO056W3MKA",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/94OO056W3MKA"
+    },
+    {
+      "title": "Assets, Threats, and Vulnerabilities",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "9N5TPHWYZTIX",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/9N5TPHWYZTIX"
+    },
+    {
+      "title": "Certificazione Microsoft: Ingegnere Associato di Intelligenza Artificiale di Azure",
+      "issuer": "Microsoft",
+      "issueDate": "Oct 2025",
+      "expiryDate": "Oct 2026",
+      "credentialId": "EDB47B59AACA2E6A",
+      "credentialUrl": "https://learn.microsoft.com/api/credentials/share/it-it/GiulioLeone/EDB47B59AACA2E6A?sharingId"
+    },
+    {
+      "title": "Tools of the Trade: Linux and SQL",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "RDQI4I397MB0",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/RDQI4I397MB0"
+    },
+    {
+      "title": "Generative AI Leader",
+      "issuer": "Google Cloud",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "6OYVGYZ7JG1U",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/6OYVGYZ7JG1U"
+    },
+    {
+      "title": "Gen AI Apps: Transform Your Work",
+      "issuer": "Google Cloud",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "QM310DCG54V9",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/QM310DCG54V9"
+    },
+    {
+      "title": "Gen AI: Navigate the Landscape",
+      "issuer": "Google Cloud",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "UC6NKNBM1EJ9",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/UC6NKNBM1EJ9"
+    },
+    {
+      "title": "Connect and Protect: Networks and Network Security",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "DW85AADGUNGB",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/DW85AADGUNGB"
+    },
+    {
+      "title": "Play It Safe: Manage Security Risks",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "H4JN1M1LBIOP",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/H4JN1M1LBIOP"
+    },
+    {
+      "title": "Foundations of Cybersecurity",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1D2DST5QC5WY",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/1D2DST5QC5WY"
+    },
+    {
+      "title": "Gen AI: Unlock Foundational Concepts",
+      "issuer": "Google Cloud",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "Y8NG1I29YEE7",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/Y8NG1I29YEE7"
+    },
+    {
+      "title": "Gen AI: Beyond the Chatbot",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "FHE245Q43QER",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/FHE245Q43QER"
+    },
+    {
+      "title": "Foundations: Data, Data, Everywhere",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1RXH0A6WTOOC",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/1RXH0A6WTOOC"
+    },
+    {
+      "title": "Google Prompting Essentials",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "W3BMWEOEIUZ4",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/specialization/W3BMWEOEIUZ4"
+    },
+    {
+      "title": "Velocizza l'analisi dei dati e la creazione di presentazioni:",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "HQXN7DV5YMIW",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/HQXN7DV5YMIW"
+    },
+    {
+      "title": "Resta al passo con l'AI",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "12W8786EYGXB",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/12W8786EYGXB"
+    },
+    {
+      "title": "Progetta prompt per le attività lavorative quotidiane:",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "606BYZ3IJCHC",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/606BYZ3IJCHC"
+    },
+    {
+      "title": "Usa l'AI in modo responsabile",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "IO1TTSM394ZK",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/IO1TTSM394ZK"
+    },
+    {
+      "title": "Scopri l'arte del prompting",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "QRE9NNLZTI7K",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/QRE9NNLZTI7K"
+    },
+    {
+      "title": "Massimizza la produttività con gli strumenti di AI",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "DPFO5UM24OR1",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/DPFO5UM24OR1"
+    },
+    {
+      "title": "Introduzione all'AI",
+      "issuer": "Google",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "KK1G8RS50WC4",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/KK1G8RS50WC4"
+    },
+    {
+      "title": "IA generativa: elevare la sua carriera nella scienza dei dati",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "CR88H4LG9BOC",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/CR88H4LG9BOC"
+    },
+    {
+      "title": "Che cos'è la Scienza dei dati?",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "M2PQMJU29YNG",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/M2PQMJU29YNG"
+    },
+    {
+      "title": "Foundations of AI and Machine Learning",
+      "issuer": "Microsoft",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "UDN5UC2EP5IC",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/UDN5UC2EP5IC"
+    },
+    {
+      "title": "Getting Started with AWS Generative AI for Developers",
+      "issuer": "Amazon Web Services",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "X354FA8GYJ0Y",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/X354FA8GYJ0Y"
+    },
+    {
+      "title": "Introduzione all'apprendimento profondo e alle reti neurali con Keras",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "ZL0TUFOTPVFL",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/ZL0TUFOTPVFL"
+    },
+    {
+      "title": "Apprendimento automatico con Python",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "SLUQHZG87B09",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/SLUQHZG87B09"
+    },
+    {
+      "title": "Agentic AI with LangGraph, CrewAI, AutoGen and BeeAI",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "WJRH3TBF6SDE",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/WJRH3TBF6SDE"
+    },
+    {
+      "title": "Agentic AI with LangChain and LangGraph",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "X1Z7N3TGPFML",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/X1Z7N3TGPFML"
+    },
+    {
+      "title": "Fundamentals of Building AI Agents",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "29PPFV7FXGFZ",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/29PPFV7FXGFZ"
+    },
+    {
+      "title": "Build Multimodal Generative AI Applications",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "BXT08WS7ZAC5",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/BXT08WS7ZAC5"
+    },
+    {
+      "title": "Advanced RAG with Vector Databases and Retrievers",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "75H11NTANA2Q",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/75H11NTANA2Q"
+    },
+    {
+      "title": "Vector Databases for RAG: An Introduction",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "3Y1W60X6AXZT",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/3Y1W60X6AXZT"
+    },
+    {
+      "title": "Build RAG Applications: Get Started",
+      "issuer": "IBM",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "98SFKC8YDGGE",
+      "credentialUrl": "https://www.coursera.org/account/accomplishments/records/98SFKC8YDGGE"
+    },
+    {
+      "title": "Oracle AI Vector Search Professional",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-184-25",
+      "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7376684&registrationID=asx-75198c2f-0fe2-4aef-a506-7132a925a74b"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Data Science Professional",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-1110-25",
+      "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7376684&registrationID=asx-9dc94648-95d2-45f4-b605-01a24ba4a602"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure 2025 AI Foundations Associate",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-1122-25",
+      "credentialUrl": "https://brm-certview.oracle.com/ords/certview/ScoreReport?ssn=OC7358559&registrationID=asx-485db06e-09e5-42d9-890c-1547938fd82b"
+    },
+    {
+      "title": "MongoDB Associate Developer",
+      "issuer": "MongoDB",
+      "issueDate": null,
+      "expiryDate": null,
+      "credentialId": null,
+      "credentialUrl": "https://www.credly.com/badges/37c9e9aa-66c8-459a-a266-e92bb6dd0582/linked_in_profile"
+    },
+    {
+      "title": "Secure MongoDB Atlas: AuthN and AuthZ",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDB3tyl91sit2",
+      "credentialUrl": "https://learn.mongodb.com/c/RkW-9kvLSZmDL6YZq6VCCQ"
+    },
+    {
+      "title": "Secure MongoDB Self-Managed: AuthN and AuthZ",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDB1rf54f44sr",
+      "credentialUrl": "https://learn.mongodb.com/c/9RozyiXxTCuHdnOVqH36Pw"
+    },
+    {
+      "title": "Fundamentals of Data Transformation",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBwv933caodf",
+      "credentialUrl": "https://learn.mongodb.com/c/ZslT7gTiTb2nU2RVK-a-tA"
+    },
+    {
+      "title": "CRUD Operations in MongoDB",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBu3i2973ghh",
+      "credentialUrl": "https://learn.mongodb.com/c/rfQt_ARZSHCf6_D2cnyVSQ"
+    },
+    {
+      "title": "Query Optimization",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBa83t650tju",
+      "credentialUrl": "https://learn.mongodb.com/c/WcINus8_SrCgmg50GGlaBA"
+    },
+    {
+      "title": "AI Agents with MongoDB",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBhewntdmzsi",
+      "credentialUrl": "https://learn.mongodb.com/c/JS84S8IsSHSBZ8ltmJQdnA"
+    },
+    {
+      "title": "Vector Search Fundamentals",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBjxde5ig5b7",
+      "credentialUrl": "https://learn.mongodb.com/c/cDTqVRS2Rj-IQB7ossFurg"
+    },
+    {
+      "title": "Schema Design Optimization",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBg30xgbkqn9",
+      "credentialUrl": "https://learn.mongodb.com/c/UjqJ4rRAQFyL6DIGnZNf5A"
+    },
+    {
+      "title": "Advanced Schema Patterns and Antipatterns",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBtj45j2h0av",
+      "credentialUrl": "https://learn.mongodb.com/c/K3PiKtoJR3mIXT7iwefLIw"
+    },
+    {
+      "title": "Schema Design Patterns and Antipatterns",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDBzyiz79qzrh",
+      "credentialUrl": "https://learn.mongodb.com/c/jT2Ga83eST-ubcgMpC8z-A"
+    },
+    {
+      "title": "Relational to Document Model",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "MDB45zj55s086",
+      "credentialUrl": "https://learn.mongodb.com/c/WsMnI76LQ9eNi6_4s7ZAZQ"
+    },
+    {
+      "title": "From Relational Model (SQL) to MongoDB's Document Model",
+      "issuer": "MongoDB",
+      "issueDate": "Jul 2025",
+      "expiryDate": null,
+      "credentialId": "2f3fa325-3e3d-4042-a749-19bdbc969446",
+      "credentialUrl": "https://www.credly.com/badges/2f3fa325-3e3d-4042-a749-19bdbc969446/linked_in_profile"
+    },
+    {
+      "title": "Neo4j Graph Data Science Certification",
+      "issuer": "Neo4j",
+      "issueDate": "Jun 2025",
+      "expiryDate": null,
+      "credentialId": "acf7149a-05df-4ae5-8c95-7573e1c96c7b",
+      "credentialUrl": "https://graphacademy.neo4j.com/c/acf7149a-05df-4ae5-8c95-7573e1c96c7b/"
+    },
+    {
+      "title": "Neo4j Certified Professional",
+      "issuer": "Neo4j",
+      "issueDate": "Jun 2025",
+      "expiryDate": null,
+      "credentialId": "99070288-d96c-4062-9c42-861f429a0beb",
+      "credentialUrl": "https://graphacademy.neo4j.com/c/99070288-d96c-4062-9c42-861f429a0beb/"
+    },
+    {
+      "title": "Oracle Fusion AI Agent Studio Foundations Associate - Rel 1",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-1145-1",
+      "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1145-1"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Foundations Associate",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-1085-25",
+      "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1085-25"
+    },
+    {
+      "title": "Oracle Cloud Infrastructure 2025 Generative AI Professional",
+      "issuer": "Oracle",
+      "issueDate": "Oct 2025",
+      "expiryDate": null,
+      "credentialId": "1Z0-1127-25",
+      "credentialUrl": "https://catalog-education.oracle.com/ords/certview/sharebadge?id=1Z0-1127-25"
+    }
+  ]
+}
