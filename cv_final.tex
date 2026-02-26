@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78, top=1.6cm, bottom=1.2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
+\usepackage{fontawesome5}
+\usepackage{etoolbox}
+\patchcmd{\makecvhead}{\begin{tabular}[b]}{\vspace{0.5em}\begin{tabular}[b]}{}{}
+
+\name{Giulio}{Leone}
+\title{Senior AI Engineer --- Generative AI \& LLM Systems}
+\address{Rome, Italy}{}{Relocating to UAE (Dubai / Abu Dhabi) --- Immediately Available}
+\phone[mobile]{+39~366~141~0914}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+\extrainfo{\faWhatsapp~~WhatsApp / \faTelegram~~Telegram available}
+
+\begin{document}
+\makecvtitle
+
+\section{Professional Summary}
+\cvitem{}{Senior AI Engineer with 5+ years of experience designing and deploying production Generative AI systems. Core expertise in RAG architectures, Agentic AI, Generative UI, and enterprise-grade LLM integration. Strong Full-Stack delivery capability (Python, React/Next.js) enabling end-to-end AI product development. 66+ technical certifications including AWS, Microsoft Azure, Google, Oracle, IBM, MongoDB, and Neo4j. M.Sc. in Management Engineering (Digital Transformation) with research on Generative UI and embedding-free RAG systems.}
+
+\section{Professional Experience}
+\cventry{Jan 2020 -- Present}{Senior AI Engineer \& Technical Consultant}{Independent Practice --- 15+ Projects Delivered}{Rome, Italy}{}{
+Technical lead for mid-to-large enterprises (up to 500K+ users). Led cross-functional teams of 2-5 engineers.
+\begin{itemize}
+\item Agentic AI \& Generative UI: Multi-agent OmniApp with LLM orchestration. Reduced UI development time by 40\%.
+\item Enterprise RAG Systems: Hybrid RAG pipelines on 50K+ documents. Reduced hallucination rate by 30\%.
+\item Full-Stack Platforms: 5+ enterprise dashboards. P95 latency under 800ms via Redis + CDN.
+\item Legacy Modernization: COBOL-to-Python migration ~50K LOC. Improved rewrite velocity by 60\%.
+\item AI-Augmented Development: AI coding assistants for dev, debugging, testing.
+\item Cloud \& DevOps: CI/CD (GitHub Actions), Docker/K8s, Azure + AWS. OWASP compliance.
+\end{itemize}
+}
+
+\section{Key AI Projects}
+\cvitem{OmniApp GenUI}{Multi-agent system reducing UI dev time by 40\%. Tech: React, LangGraph.}
+\cvitem{Enterprise RAG}{Hybrid RAG on 50K+ docs, 30\% less hallucinations. Tech: Pinecone, OpenAI.}
+\cvitem{IoT Dashboard}{Real-time processing 10K pts/sec. Tech: TimescaleDB, FastAPI.}
+
+\section{Technical Skills}
+\cvitem{AI \& GenAI}{LLM Integration, LangChain, LangGraph, RAG, Agentic AI, CrewAI, GenUI, Prompt Eng, LLMOps, AI Evaluation \& Guardrails}
+\cvitem{ML}{Python, Pandas, NumPy, Scikit-learn, Keras, Pinecone, ChromaDB, Neo4j}
+\cvitem{Full-Stack}{React/Next.js, TypeScript, Angular, Vue.js, Django, FastAPI, Node.js, GraphQL}
+\cvitem{Cloud}{AWS, Azure, Docker, K8s, GitHub Actions, Terraform}
+\cvitem{DB}{PostgreSQL, MongoDB, Pinecone, ChromaDB, Neo4j, TimescaleDB, Redis}
+
+\section{Education}
+\cventry{June 2026 (Exp)}{M.Sc. Management Engineering (Digital Transformation)}{Uninettuno University}{Distance Learning}{GPA 27/30}{Thesis on GenUI + RAG. \textbf{Current studies do not affect full-time work availability.}}
+\cventry{2018 -- 2021}{B.Sc. Management Engineering}{Sapienza University of Rome}{Rome, Italy}{}{}
+
+\section{Certifications (66+)}
+\cvitem{AI}{AWS GenAI Dev Pro, Azure AI Engineer, Oracle OCI GenAI Pro, IBM Multimodal GenAI, Oracle AI Agent Studio}
+\cvitem{Data}{IBM Data Science, Oracle Data Science, Neo4j Graph Data Science, Google Data Analytics}
+\cvitem{DB}{MongoDB, Oracle AI Vector Search, Neo4j Certified}
+\cvitem{Security}{Google Cybersecurity, Microsoft Security, Oracle OCI}
+
+\section{Languages}
+\cvitemwithcomment{Italian}{Native}{}
+\cvitemwithcomment{English}{C1}{Professional Working Proficiency}
+
+\emptysection{}\closesection
+\vfill
+\centering{\footnotesize EU citizen — Open to UAE visa — Immediately available (0 days notice)}
+\end{document}
