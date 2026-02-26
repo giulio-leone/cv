@@ -13,10 +13,10 @@
 
 ## 📥 Download CV
 
-| Language | PDF |
-|----------|-----|
-| 🇬🇧 English | [giulio-leone-cv-en.pdf](output/cv-en.pdf) |
-| 🇮🇹 Italiano | [giulio-leone-cv-it.pdf](output/cv-it.pdf) |
+| Version | 🇬🇧 English | 🇮🇹 Italiano |
+|---------|------------|-------------|
+| **Full (2 pages)** | [cv-en.pdf](output/cv-en.pdf) | [cv-it.pdf](output/cv-it.pdf) |
+| **One-page** | [cv-en-onepage.pdf](output/cv-en-onepage.pdf) | [cv-it-onepage.pdf](output/cv-it-onepage.pdf) |
 
 ---
 

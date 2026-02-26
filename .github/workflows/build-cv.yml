@@ -26,6 +26,8 @@ jobs:
           root_file: |
             src/cv-it.tex
             src/cv-en.tex
+            src/cv-it-onepage.tex
+            src/cv-en-onepage.tex
           working_directory: .
           args: -interaction=nonstopmode -output-directory=output
 

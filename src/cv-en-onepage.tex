@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% --- STYLE ---
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.82, top=1.4cm, bottom=1.0cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=1pt}
+\usepackage{fontawesome5}
+\usepackage{etoolbox}
+
+\patchcmd{\makecvhead}{\begin{tabular}[b]}{\vspace{0.3em}\begin{tabular}[b]}{}{}
+
+% --- PERSONAL DATA ---
+\name{Giulio}{Leone}
+\title{Senior AI Engineer --- Generative AI \& LLM Systems}
+\address{Rome, Italy}{}{Relocating to UAE (Dubai / Abu Dhabi) --- Immediately Available}
+\phone[mobile]{+39~366~141~0914}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+\extrainfo{\faWhatsapp~~WhatsApp / \faTelegram~~Telegram available}
+
+% --- DOCUMENT ---
+\begin{document}
+
+\makecvtitle
+
+% --- PROFESSIONAL SUMMARY ---
+\section{Professional Summary}
+\cvitem{}{Senior AI Engineer with \textbf{7+ years of experience} designing production Generative AI systems. Expert in \textbf{RAG}, \textbf{Agentic AI}, \textbf{Generative UI}, and enterprise LLM integration. Full-Stack delivery (Python, React/Next.js). \textbf{66+ certifications} (AWS, Azure, Google, Oracle, IBM). M.Sc.\ in Digital Transformation.}
+
+% --- PROFESSIONAL EXPERIENCE ---
+\section{Professional Experience}
+
+\cventry{Jan 2020 -- Present}{Senior AI Engineer \& Technical Consultant}{Independent AI Consultancy --- 15+ Projects}{Rome, Italy}{}{
+AI architecture lead for mid-to-large enterprises. Clients: \textbf{Tier-1 European FinTech} (500K+ users), \textbf{E-commerce platforms}, \textbf{Industrial IoT}. Teams of 2--5 engineers.
+\vspace{0.2em}
+\begin{itemize}
+    \item \textbf{Agentic AI \& Generative UI:} Multi-agent OmniApp rendering React in real-time via LLM orchestration. \textbf{Reduced UI dev time by 40\%.}
+    \item \textbf{Enterprise RAG:} Hybrid pipelines (vector + BM25 + disambiguation) on 50K+ docs. \textbf{Reduced hallucinations by 30\%.}
+    \item \textbf{Full-Stack Platforms:} 5+ enterprise dashboards. \textbf{P95 latency <800ms} via Redis/CDN.
+    \item \textbf{Legacy Modernization:} COBOL-to-Python migration (~50K LOC). \textbf{60\% faster rewrite velocity.}
+    \item \textbf{LLMOps \& DevOps:} AI evaluation pipelines, guardrails, CI/CD, Docker/Kubernetes, Azure + AWS.
+\end{itemize}
+}
+
+% --- TECHNICAL SKILLS ---
+\section{Technical Skills}
+\cvitem{\textbf{AI/GenAI}}{LLM Integration, LangChain, LangGraph, Vercel AI SDK, RAG (Vector + BM25), Agentic AI, CrewAI, LLMOps, AI Guardrails, Prompt Engineering}
+\cvitem{\textbf{Development}}{Python, TypeScript, React/Next.js, FastAPI, Django, Node.js, PostgreSQL, MongoDB, Neo4j, Redis}
+\cvitem{\textbf{Cloud/DevOps}}{AWS, Microsoft Azure, Docker, Kubernetes, GitHub Actions, Terraform, CI/CD}
+
+% --- EDUCATION ---
+\section{Education}
+\cventry{June 2026}{M.Sc.\ Management Engineering}{Unimercatorum}{}{27/30 --- \textbf{Thesis defense pending, full-time available}}{}
+\cventry{2018 -- 2021}{B.Sc.\ Management Engineering (L-9)}{Universit\`a Niccol\`o Cusano}{Italy}{}{}
+
+% --- CERTIFICATIONS ---
+\section{Top Certifications (from 66+)}
+\cvitem{}{AWS GenAI Developer Pro \,$\cdot$\, Azure AI Engineer \,$\cdot$\, Oracle OCI GenAI Pro \,$\cdot$\, IBM Data Science Pro \,$\cdot$\, MongoDB Dev \,$\cdot$\, Google Cybersecurity \,$\cdot$\, \textit{66+ total: github.com/giulio-leone/cv}}
+
+% --- LANGUAGES ---
+\section{Languages}
+\cvitemwithcomment{Italian}{Native}{} \cvitemwithcomment{English}{C1 Advanced}{Daily professional use}
+
+% --- FOOTER ---
+\vfill
+\begin{center}
+    \footnotesize \textit{EU citizen --- Open to UAE work visa sponsorship --- Immediately available (0 days notice).}
+\end{center}
+
+\end{document}
