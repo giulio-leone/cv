@@ -42,9 +42,6 @@ AI Engineer with **5+ years of experience** designing and deploying end-to-end G
 ├── data/
 │   ├── certifications.json    # All 66+ certifications (structured)
 │   └── certifications.csv     # LinkedIn export
-├── interview-prep/
-│   ├── qa-en.md               # Interview Q&A (English)
-│   └── qa-it.md               # Interview Q&A (Italiano)
 ├── output/
 │   ├── cv-it.pdf              # Compiled Italian PDF
 │   └── cv-en.pdf              # Compiled English PDF
@@ -66,19 +63,6 @@ AI Engineer with **5+ years of experience** designing and deploying end-to-end G
 | 📦 Other | 9 | Google UX Design, Google Data Analytics |
 
 > Full structured data: [`data/certifications.json`](data/certifications.json)
-
----
-
-## 🎤 Interview Preparation
-
-Complete Q&A set (45 questions) for AI Engineer interviews:
-
-- **Technical AI/GenAI** — RAG, Agentic AI, Generative UI, LLM evaluation
-- **CV Metrics Defense** — How to justify every number in the CV
-- **Behavioral Dubai/UAE** — Cultural awareness, relocation, leadership
-- **Salary Negotiation** — UAE market ranges, benefits, logistics
-
-📖 [English Q&A](interview-prep/qa-en.md) | [Italian Q&A](interview-prep/qa-it.md)
 
 ---
 
