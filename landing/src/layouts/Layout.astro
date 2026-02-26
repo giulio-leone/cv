@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css'
+import CustomCursor from '../components/CustomCursor'
+
 interface Props { title?: string }
 const { title = 'Giulio Leone — Senior AI Engineer' } = Astro.props
 const base = import.meta.env.BASE_URL
@@ -15,12 +17,21 @@ const base = import.meta.env.BASE_URL
   <meta property="og:description" content="RAG · Agentic AI · LLM Systems · 66+ Certifications · Open to UAE" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://giulio-leone.github.io/cv/" />
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>" />
+  
+  {/* Premium SVG Favicon instead of emoji */}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23050a14'/><path d='M30 70L50 30L70 70' stroke='%23ffffff' stroke-width='8' fill='none' stroke-linejoin='round'/><circle cx='50' cy='60' r='6' fill='%23ffffff'/></svg>" />
+  
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body class="overflow-x-hidden">
+<body class="overflow-x-hidden relative">
+  {/* Global grain texture for premium analog feel */}
+  <div class="noise-bg" aria-hidden="true"></div>
+  
+  {/* Custom fluid cursor */}
+  <CustomCursor client:load />
+  
   <slot />
 </body>
 </html>

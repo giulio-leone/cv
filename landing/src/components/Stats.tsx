@@ -13,21 +13,21 @@ export default function Stats() {
   const inView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="py-20 px-6">
-      <div className="max-w-4xl mx-auto">
+    <section ref={ref} className="py-24 px-6 relative z-10">
+      <div className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
               key={s.label}
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.5, type: 'spring' }}
-              className="text-center p-6 rounded-2xl bg-glass border border-glass-border backdrop-blur-sm"
+              initial={{ opacity: 0, y: 30 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+              className="text-center p-8 rounded-3xl glass-panel transition-transform duration-500 hover:scale-105"
             >
-              <div className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-br from-accent to-accent-2 bg-clip-text text-transparent">
+              <div className="text-5xl sm:text-6xl font-black mb-3 text-gradient">
                 {s.value}
               </div>
-              <div className="text-xs uppercase tracking-wider text-text-muted mt-2">{s.label}</div>
+              <div className="text-xs tracking-[0.2em] font-medium uppercase text-text-muted">{s.label}</div>
             </motion.div>
           ))}
         </div>
