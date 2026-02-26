@@ -29,18 +29,13 @@ jobs:
           working_directory: .
           args: -interaction=nonstopmode -output-directory=output
 
-      - name: Rename output PDFs
-        run: |
-          mv output/cv-it.pdf output/giulio-leone-cv-it.pdf
-          mv output/cv-en.pdf output/giulio-leone-cv-en.pdf
-
       - name: Upload PDF artifacts
         uses: actions/upload-artifact@v4
         with:
           name: cv-pdfs
           path: |
-            output/giulio-leone-cv-it.pdf
-            output/giulio-leone-cv-en.pdf
+            output/cv-it.pdf
+            output/cv-en.pdf
 
       - name: Commit updated PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -72,10 +67,10 @@ jobs:
             Automated CV build from commit ${{ github.sha }}.
             
             📄 **Downloads:**
-            - `giulio-leone-cv-en.pdf` — English version
-            - `giulio-leone-cv-it.pdf` — Italian version
+            - `cv-en.pdf` — English version
+            - `cv-it.pdf` — Italian version
           files: |
-            output/giulio-leone-cv-en.pdf
-            output/giulio-leone-cv-it.pdf
+            output/cv-en.pdf
+            output/cv-it.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,10 +1,10 @@
 # 📄 Giulio Leone — CV Repository
 
-> **AI Engineer | GenAI & LLM Specialist**
+> **Senior AI Engineer — Generative AI & LLM Systems**
 > 
 > Rome, Italy → Dubai/UAE 🇦🇪
 
-[![Build CV](https://github.com/giulioleone/cv/actions/workflows/build-cv.yml/badge.svg)](https://github.com/giulioleone/cv/actions/workflows/build-cv.yml)
+[![Build CV](https://github.com/giulio-leone/cv/actions/workflows/build-cv.yml/badge.svg)](https://github.com/giulio-leone/cv/actions/workflows/build-cv.yml)
 [![Certifications](https://img.shields.io/badge/Certifications-66%2B-blue)](data/certifications.json)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-giulioleone1-0077B5?logo=linkedin)](https://www.linkedin.com/in/giulioleone1/)
 [![Website](https://img.shields.io/badge/Website-giulioleone.com-000?logo=vercel)](https://www.giulioleone.com)
@@ -22,7 +22,7 @@
 
 ## 🧑‍💻 About
 
-AI Engineer with **5+ years of experience** designing and deploying end-to-end Generative AI solutions. Specialized in:
+Senior AI Engineer with **7+ years of experience** designing and deploying end-to-end Generative AI solutions. Specialized in:
 
 - 🤖 **RAG Systems** — Vector + BM25 hybrid search, iterative disambiguation
 - 🧠 **Agentic AI** — Multi-agent orchestration with LangChain/LangGraph
