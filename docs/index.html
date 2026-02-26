@@ -3,57 +3,408 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giulio Leone — CV | Senior AI Engineer</title>
-    <meta name="description" content="Senior AI Engineer specializing in RAG, Agentic AI, and LLM Systems. 7+ years experience, 66+ certifications. Relocating to Dubai/UAE.">
+    <title>Giulio Leone — Senior AI Engineer</title>
+    <meta name="description" content="Senior AI Engineer specializing in RAG, Agentic AI, and LLM Systems. 7+ years experience, 66+ certifications. Open to UAE.">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Giulio Leone — Senior AI Engineer">
+    <meta property="og:description" content="RAG · Agentic AI · LLM Systems · 66+ Certifications · Open to UAE">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://giulio-leone.github.io/cv/">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #050a14;
+            --surface: rgba(255,255,255,0.03);
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.08);
+            --text: #e4e5e7;
+            --text-muted: #8b8d94;
+            --accent: #0ea5e9;
+            --accent-hover: #38bdf8;
+            --gradient-1: #0ea5e9;
+            --gradient-2: #6366f1;
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0d1b2a; color: #e0e1dd; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-        .container { max-width: 600px; padding: 3rem 2rem; text-align: center; }
-        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.3rem; color: #fff; }
-        .subtitle { font-size: 1.1rem; color: #00b4d8; margin-bottom: 0.5rem; }
-        .tagline { font-size: 0.95rem; color: #778da9; margin-bottom: 2rem; }
-        .downloads { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
-        a.btn { display: block; padding: 0.9rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1rem; transition: transform 0.2s, box-shadow 0.2s; }
-        a.btn:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,180,216,0.3); }
-        .btn-primary { background: #0077b6; color: #fff; }
-        .btn-secondary { background: #1b4965; color: #e0e1dd; }
-        .links { margin-top: 1.5rem; display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
-        .links a { color: #00b4d8; text-decoration: none; font-size: 0.9rem; }
-        .links a:hover { text-decoration: underline; }
-        .certs { margin-top: 1.5rem; font-size: 0.85rem; color: #778da9; }
-        .footer { margin-top: 2rem; font-size: 0.75rem; color: #415a77; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Animated gradient background */
+        .bg-glow {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 40%, rgba(14,165,233,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(99,102,241,0.06) 0%, transparent 50%);
+            animation: glow 15s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+        @keyframes glow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(-5%, -3%) scale(1.1); }
+        }
+
+        .wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Fade-in animations */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.7s ease forwards;
+        }
+        .fade-up:nth-child(2) { animation-delay: 0.1s; }
+        .fade-up:nth-child(3) { animation-delay: 0.2s; }
+        .fade-up:nth-child(4) { animation-delay: 0.3s; }
+        .fade-up:nth-child(5) { animation-delay: 0.4s; }
+        .fade-up:nth-child(6) { animation-delay: 0.5s; }
+        .fade-up:nth-child(7) { animation-delay: 0.6s; }
+        @keyframes fadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Status pill */
+        .status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            background: rgba(16,185,129,0.1);
+            border: 1px solid rgba(16,185,129,0.2);
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #10b981;
+            margin-bottom: 1.5rem;
+            width: fit-content;
+        }
+        .status::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10b981;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .role {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+        .role strong {
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .tag {
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .tag:hover {
+            border-color: rgba(14,165,233,0.3);
+            color: var(--accent);
+        }
+
+        /* Download cards */
+        .downloads {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+        .dl-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 1.2rem 1rem;
+            border-radius: 12px;
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        .dl-card:hover {
+            border-color: rgba(14,165,233,0.4);
+            background: rgba(14,165,233,0.06);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14,165,233,0.1);
+        }
+        .dl-card .icon { font-size: 1.5rem; }
+        .dl-card .label { font-size: 0.85rem; font-weight: 600; }
+        .dl-card .meta { font-size: 0.72rem; color: var(--text-muted); }
+        .dl-card.primary {
+            border-color: rgba(14,165,233,0.3);
+            background: rgba(14,165,233,0.05);
+        }
+
+        /* Stats row */
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+            padding: 1.2rem 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        .stat {
+            flex: 1;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .stat-label {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.2rem;
+        }
+
+        /* Certifications marquee */
+        .certs-section {
+            margin-bottom: 2.5rem;
+        }
+        .certs-title {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+        .certs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+        .cert {
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            background: var(--surface);
+            border: 1px solid var(--glass-border);
+            color: var(--text-muted);
+        }
+        .cert-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+        }
+        .cert-more:hover { text-decoration: underline; }
+
+        /* Social links */
+        .socials {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass);
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Footer */
+        .footer {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            opacity: 0.6;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .wrapper { padding: 2.5rem 1.25rem; }
+            h1 { font-size: 2rem; }
+            .downloads { grid-template-columns: 1fr; }
+            .stats { gap: 1rem; }
+            .stat-value { font-size: 1.2rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Giulio Leone</h1>
-        <div class="subtitle">Senior AI Engineer — Generative AI & LLM Systems</div>
-        <div class="tagline">RAG · Agentic AI · LLM Integration · Full-Stack<br>7+ Years · 66+ Certifications · Relocating to UAE 🇦🇪</div>
+    <div class="bg-glow"></div>
+    <div class="wrapper">
 
-        <div class="downloads">
-            <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-en.pdf" class="btn btn-primary">📄 Download CV — English (2 pages)</a>
-            <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-en-onepage.pdf" class="btn btn-secondary">📄 Download CV — English (1 page)</a>
-            <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-it.pdf" class="btn btn-secondary">📄 Download CV — Italiano (2 pagine)</a>
-            <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-it-onepage.pdf" class="btn btn-secondary">📄 Download CV — Italiano (1 pagina)</a>
+        <div class="fade-up">
+            <div class="status">Available for UAE opportunities</div>
         </div>
 
-        <div class="links">
-            <a href="https://www.giulioleone.com">🌐 Website</a>
-            <a href="https://www.linkedin.com/in/giulioleone1/">💼 LinkedIn</a>
-            <a href="https://github.com/giulio-leone/cv">📁 GitHub Repo</a>
-            <a href="mailto:giulioleone097@gmail.com">📧 Email</a>
+        <div class="fade-up">
+            <h1>Giulio Leone</h1>
+            <p class="role">Senior <strong>AI Engineer</strong> — Generative AI & LLM Systems</p>
         </div>
 
-        <div class="certs">
-            AWS Certified GenAI Developer Pro · Azure AI Engineer · Oracle OCI GenAI Pro<br>
-            IBM Data Science Pro · MongoDB Associate Dev · Google Cybersecurity<br>
-            <a href="https://github.com/giulio-leone/cv/blob/main/data/certifications.json" style="color:#00b4d8;">View all 66+ certifications →</a>
+        <div class="fade-up">
+            <div class="tags">
+                <span class="tag">RAG Systems</span>
+                <span class="tag">Agentic AI</span>
+                <span class="tag">LLM Integration</span>
+                <span class="tag">Generative UI</span>
+                <span class="tag">Full-Stack</span>
+                <span class="tag">Python</span>
+                <span class="tag">React / Next.js</span>
+            </div>
         </div>
 
-        <div class="footer">
-            EU citizen · Immediately available · Open to UAE work visa sponsorship<br>
-            +39 366 141 0914 (WhatsApp/Telegram)
+        <div class="fade-up">
+            <div class="downloads">
+                <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-en.pdf" class="dl-card primary">
+                    <span class="icon">📄</span>
+                    <span class="label">CV — English</span>
+                    <span class="meta">Full · 2 pages</span>
+                </a>
+                <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-en-onepage.pdf" class="dl-card">
+                    <span class="icon">📋</span>
+                    <span class="label">CV — English</span>
+                    <span class="meta">Compact · 1 page</span>
+                </a>
+                <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-it.pdf" class="dl-card">
+                    <span class="icon">🇮🇹</span>
+                    <span class="label">CV — Italiano</span>
+                    <span class="meta">Completo · 2 pagine</span>
+                </a>
+                <a href="https://github.com/giulio-leone/cv/raw/main/output/cv-it-onepage.pdf" class="dl-card">
+                    <span class="icon">🇮🇹</span>
+                    <span class="label">CV — Italiano</span>
+                    <span class="meta">Compatto · 1 pagina</span>
+                </a>
+            </div>
         </div>
+
+        <div class="fade-up">
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-value">7+</div>
+                    <div class="stat-label">Years</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">66+</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">EU</div>
+                    <div class="stat-label">Citizen</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-value">0</div>
+                    <div class="stat-label">Days Notice</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade-up">
+            <div class="certs-section">
+                <div class="certs-title">Top Certifications</div>
+                <div class="certs-grid">
+                    <span class="cert">AWS GenAI Developer Pro</span>
+                    <span class="cert">Azure AI Engineer</span>
+                    <span class="cert">Oracle OCI GenAI Pro</span>
+                    <span class="cert">IBM Data Science Pro</span>
+                    <span class="cert">MongoDB Associate Dev</span>
+                    <span class="cert">Google Cybersecurity</span>
+                    <span class="cert">Meta Back-End Dev</span>
+                    <a href="https://github.com/giulio-leone/cv/blob/main/data/certifications.json" class="cert-more">+59 more →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="fade-up">
+            <div class="socials">
+                <a href="https://www.giulioleone.com" class="social-link">🌐 Website</a>
+                <a href="https://www.linkedin.com/in/giulioleone1/" class="social-link">💼 LinkedIn</a>
+                <a href="https://github.com/giulio-leone/cv" class="social-link">⚡ Source</a>
+                <a href="mailto:giulioleone097@gmail.com" class="social-link">✉️ Email</a>
+                <a href="https://wa.me/393661410914" class="social-link">💬 WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="fade-up">
+            <div class="footer">
+                EU citizen · Immediately available · Open to UAE work visa sponsorship<br>
+                Built with LaTeX · Auto-compiled via GitHub Actions
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
