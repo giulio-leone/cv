@@ -6,17 +6,44 @@
 
 % --- PACKAGES ---
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.78, top=1.8cm, bottom=1.5cm]{geometry}
+\usepackage[scale=0.78, top=1.6cm, bottom=1.2cm]{geometry}
 \usepackage[english]{babel}
 \usepackage{enumitem}
 \setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
 \usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+% --- CUSTOM COLORS ---
+\definecolor{accent}{HTML}{0891B2}    % Teal/Cyan accent
+\definecolor{darkaccent}{HTML}{155E75} % Dark teal
+\definecolor{lightbg}{HTML}{F0FDFA}   % Light teal background
+\definecolor{tagbg}{HTML}{E0F2FE}     % Light blue tag background
+\definecolor{tagtext}{HTML}{0C4A6E}   % Dark blue tag text
+\definecolor{metricgreen}{HTML}{059669} % Green for metrics
+
+% --- CUSTOM COMMANDS ---
+% Skill tag (rounded pill)
+\newcommand{\skilltag}[1]{%
+  \tikz[baseline=(tag.base)]{%
+    \node[fill=tagbg, text=tagtext, rounded corners=3pt, inner sep=2.5pt, font=\footnotesize\sffamily] (tag) {#1};%
+  }%
+}
+
+% Metric highlight
+\newcommand{\metric}[1]{\textcolor{metricgreen}{\textbf{#1}}}
+
+% Section with icon
+\newcommand{\iconsection}[2]{%
+  \section{\texorpdfstring{\textcolor{accent}{#1}~~#2}{#2}}%
+}
 
 % --- PERSONAL DATA ---
 \name{Giulio}{Leone}
-\title{AI Engineer | GenAI \& LLM Specialist}
-\address{Rome, Italy}{}{Willing to Relocate to Dubai / UAE}
-\phone[mobile]{+39~366~141~0914~~\small{(WhatsApp/Telegram)}}
+\title{\textcolor{accent}{\faRobot}~~AI Engineer | GenAI \& LLM Specialist}
+\address{\faMapMarker*~~Rome, Italy}{}{\faPlane~~Willing to Relocate to Dubai / UAE}
+\phone[mobile]{+39~366~141~0914~~\small{(\faWhatsapp~WhatsApp / \faTelegram~Telegram)}}
 \email{giulioleone097@gmail.com}
 \homepage{giulioleone.com}
 \social[linkedin]{giulioleone1}
@@ -27,63 +54,61 @@
 \makecvtitle
 
 % --- PROFESSIONAL SUMMARY ---
-\section{Professional Summary}
-\cvitem{}{AI Engineer with \textbf{5+ years of experience} designing and deploying end-to-end Generative AI solutions. Specialized in \textbf{RAG systems}, \textbf{Agentic AI}, \textbf{Generative UI}, and production-grade LLM integration. Strong Full-Stack background (Python, React/Next.js) enabling delivery of complete AI products — from model to user interface. \textbf{66+ technical certifications} (AWS, Microsoft, Google, Oracle, IBM, MongoDB, Neo4j). Master's degree in Management Engineering focused on Digital Transformation with thesis on Generative UI and RAG systems.}
+\iconsection{\faUserTie}{Professional Summary}
+\cvitem{}{AI Engineer with \textbf{5+ years of experience} designing and deploying end-to-end Generative AI solutions. Specialized in \textbf{RAG systems}, \textbf{Agentic AI}, \textbf{Generative UI}, and production-grade LLM integration. Strong Full-Stack background (Python, React/Next.js) enabling delivery of complete AI products — from model to user interface. \textbf{66+ technical certifications} (AWS, Microsoft, Google, Oracle, IBM, MongoDB, Neo4j). Master's degree in Management Engineering with thesis on Generative UI and RAG systems.}
 
 % --- PROFESSIONAL EXPERIENCE ---
-\section{Professional Experience}
+\iconsection{\faBriefcase}{Professional Experience}
 
 \cventry{Jan 2020 -- Present}{AI Engineer \& Full-Stack Consultant}{Independent Consultant}{Rome, Italy}{}{
 Technical lead for AI architecture and end-to-end software development for clients in \textbf{E-commerce, FinTech, and IoT} sectors.
 \vspace{0.3em}
 \begin{itemize}
-    \item \textbf{Agentic AI \& Generative UI:} Designed an OmniApp powered by autonomous AI agents and Generative UI, dynamically rendering React components in real-time via LLMs (LangChain, Vercel AI SDK). Multi-agent orchestration with fallback handling and response streaming, \textbf{reducing UI development time by $\sim$40\%}.
-    \item \textbf{Enterprise RAG Systems:} Built vector-based (Pinecone, ChromaDB) and hybrid (BM25 + embedding) RAG pipelines with iterative disambiguation. \textbf{Reduced hallucinations by $\sim$30\%} on enterprise chatbots indexing 50K+ documents.
-    \item \textbf{Full-Stack Platforms:} Delivered 5+ enterprise dashboards (React + Redux) and high-performance backends (Python FastAPI/Django). E-commerce and IoT platforms achieving \textbf{response times $<$800ms} through multi-layer caching (Redis + CDN).
-    \item \textbf{Legacy Modernization:} Led migration of COBOL codebase ($\sim$50K LOC) to Python, leveraging AI-assisted translation to \textbf{accelerate rewriting by $\sim$60\%}.
-    \item \textbf{AI-Augmented Development:} Daily use of GitHub Copilot, Cursor, Claude Code, and LLM-based tooling for development, debugging, and automated test generation.
-    \item \textbf{DevOps \& Cloud:} CI/CD pipelines (GitHub Actions), Docker/Kubernetes containerization, deployments on Azure and AWS. OWASP compliance for enterprise applications.
+    \item \textbf{\textcolor{accent}{\faRobot}~Agentic AI \& Generative UI:} Designed an OmniApp with autonomous AI agents and Generative UI, rendering React components in real-time via LLMs (LangChain, Vercel AI SDK). Multi-agent orchestration with fallback handling and streaming. \metric{$\downarrow$40\% UI dev time.}
+    \item \textbf{\textcolor{accent}{\faSearch}~Enterprise RAG Systems:} Built hybrid RAG pipelines (Vector + BM25 + iterative disambiguation) on 50K+ documents. \metric{$\downarrow$30\% hallucinations} on enterprise chatbots.
+    \item \textbf{\textcolor{accent}{\faCode}~Full-Stack Platforms:} Delivered 5+ enterprise dashboards (React + Redux) and high-perf backends (FastAPI/Django). \metric{$<$800ms P95 latency} via Redis + CDN caching.
+    \item \textbf{\textcolor{accent}{\faHistory}~Legacy Modernization:} Led COBOL→Python migration ($\sim$50K LOC) using AI-assisted translation. \metric{$\uparrow$60\% rewrite speed.}
+    \item \textbf{\textcolor{accent}{\faMagic}~AI-Augmented Dev:} Daily use of GitHub Copilot, Cursor, Claude Code for development, debugging, and automated testing.
+    \item \textbf{\textcolor{accent}{\faCloud}~DevOps \& Cloud:} CI/CD (GitHub Actions), Docker/K8s, Azure \& AWS deployments. OWASP compliance.
 \end{itemize}
 }
 
 % --- KEY AI PROJECTS ---
-\section{Key AI Projects}
-\cvitem{\textbf{OmniApp GenUI}}{Generative UI application with AI agents rendering React components in real-time. Stack: Next.js, Vercel AI SDK, LangChain, GPT-4. \textit{Reduced time-to-feature by 40\%.}}
-\cvitem{\textbf{Enterprise RAG}}{Semantic search system for 50K+ enterprise documents. Hybrid architecture (vector + BM25) with iterative disambiguation. \textit{+30\% accuracy vs. pure keyword search.}}
-\cvitem{\textbf{IoT Dashboard}}{Real-time industrial IoT monitoring platform. React + FastAPI + WebSocket + TimescaleDB. \textit{Processing 10K+ data points/sec with $<$200ms latency.}}
+\iconsection{\faLightbulb}{Key AI Projects}
+\cvitem{\textcolor{accent}{\faWandMagicSparkles}~\textbf{OmniApp GenUI}}{Generative UI with AI agents rendering React in real-time. \skilltag{Next.js} \skilltag{Vercel AI SDK} \skilltag{LangChain} \skilltag{GPT-4} \textit{— \metric{$\downarrow$40\%} time-to-feature.}}
+\cvitem{\textcolor{accent}{\faDatabase}~\textbf{Enterprise RAG}}{Semantic search for 50K+ docs. Hybrid vector + BM25 with disambiguation. \skilltag{Pinecone} \skilltag{ChromaDB} \textit{— \metric{+30\%} accuracy.}}
+\cvitem{\textcolor{accent}{\faMicrochip}~\textbf{IoT Dashboard}}{Real-time industrial monitoring. \skilltag{React} \skilltag{FastAPI} \skilltag{WebSocket} \skilltag{TimescaleDB} \textit{— \metric{10K+ pts/sec}, $<$200ms.}}
 
 % --- TECHNICAL SKILLS ---
-\section{Technical Skills}
-\cvitem{\textbf{AI \& GenAI}}{LLM Integration (OpenAI, Anthropic, LangChain, LangGraph), Vercel AI SDK, RAG (Vector + BM25 Hybrid), Agentic AI (CrewAI, AutoGen), Generative UI, Prompt Engineering}
-\cvitem{\textbf{ML \& Data}}{Python (Pandas, NumPy, Scikit-learn, Keras), Vector DB (Pinecone, ChromaDB, Neo4j), Graph DB}
-\cvitem{\textbf{Full-Stack}}{React.js/Next.js, TypeScript, Angular, Vue.js, Tailwind CSS, Django, FastAPI, Node.js, GraphQL}
-\cvitem{\textbf{Cloud/DevOps}}{AWS, Microsoft Azure, Docker, Kubernetes, CI/CD (GitHub Actions), Terraform}
-\cvitem{\textbf{AI Tooling}}{GitHub Copilot, Cursor, Claude Code, OpenAI Codex, Windsurf}
+\iconsection{\faLaptopCode}{Technical Skills}
+\cvitem{\textcolor{accent}{\faBrain}~\textbf{AI \& GenAI}}{\skilltag{OpenAI} \skilltag{Anthropic} \skilltag{LangChain} \skilltag{LangGraph} \skilltag{Vercel AI SDK} \skilltag{RAG} \skilltag{Agentic AI} \skilltag{CrewAI} \skilltag{Generative UI} \skilltag{Prompt Eng.}}
+\cvitem{\textcolor{accent}{\faChartBar}~\textbf{ML \& Data}}{\skilltag{Python} \skilltag{Pandas} \skilltag{NumPy} \skilltag{Scikit-learn} \skilltag{Keras} \skilltag{Pinecone} \skilltag{ChromaDB} \skilltag{Neo4j}}
+\cvitem{\textcolor{accent}{\faCode}~\textbf{Full-Stack}}{\skilltag{React/Next.js} \skilltag{TypeScript} \skilltag{Angular} \skilltag{Vue.js} \skilltag{Tailwind} \skilltag{Django} \skilltag{FastAPI} \skilltag{Node.js} \skilltag{GraphQL}}
+\cvitem{\textcolor{accent}{\faCloud}~\textbf{Cloud/DevOps}}{\skilltag{AWS} \skilltag{Azure} \skilltag{Docker} \skilltag{Kubernetes} \skilltag{GitHub Actions} \skilltag{Terraform}}
 
 % --- EDUCATION ---
-\section{Education}
-\cventry{Expected 2026}{Master's Degree in Management Engineering -- Digital Transformation}{Università Unimercatorum}{Italy}{GPA: 27/30}{
+\iconsection{\faGraduationCap}{Education}
+\cventry{Expected 2026}{Master's in Management Engineering -- Digital Transformation}{Università Unimercatorum}{Italy}{GPA: 27/30}{
 \begin{itemize}
-    \item \textbf{Research thesis:} Framework for Generative UI and embedding-free RAG for enterprise systems.
+    \item \textbf{Thesis:} Framework for Generative UI and embedding-free RAG for enterprise systems.
     \item \textbf{Publications:} 2 papers under peer review for international journals.
 \end{itemize}
 }
 \vspace{0.3em}
-\cventry{2018 -- 2021}{Bachelor's Degree in Management Engineering (L-9)}{Università Niccolò Cusano}{Italy}{}{
-Research thesis on K-Nearest Neighbors (KNN) algorithm applications.
+\cventry{2018 -- 2021}{Bachelor's in Management Engineering (L-9)}{Università Niccolò Cusano}{Italy}{}{
+Thesis on K-Nearest Neighbors (KNN) algorithm applications.
 }
 
 % --- CERTIFICATIONS ---
-\section{Certifications (Selection from 66+)}
-\cvitem{\textbf{AI \& GenAI}}{AWS Certified GenAI Developer Professional $\cdot$ Azure AI Engineer Associate $\cdot$ Oracle OCI GenAI Professional $\cdot$ IBM Build Multimodal GenAI Apps $\cdot$ Oracle Fusion AI Agent Studio}
-\cvitem{\textbf{Data \& ML}}{IBM Data Science Professional $\cdot$ Oracle OCI Data Science Professional $\cdot$ Neo4j Graph Data Science $\cdot$ Google Data Analytics}
-\cvitem{\textbf{Cloud}}{Oracle OCI 2025 Foundations Associate $\cdot$ Oracle OCI AI Foundations Associate}
-\cvitem{\textbf{Database}}{MongoDB Associate Developer $\cdot$ Oracle AI Vector Search Professional $\cdot$ Neo4j Certified Professional}
-\cvitem{\textbf{Security}}{Google Cybersecurity Professional $\cdot$ Microsoft AI \& ML Foundations}
-\cvitem{}{\small\textit{Full list of 66+ certifications available on LinkedIn and at} \texttt{github.com/giulio-leone/cv}}
+\iconsection{\faCertificate}{Certifications (Selection from 66+)}
+\cvitem{\textcolor{accent}{\faAws}~\textbf{AI \& GenAI}}{AWS Certified GenAI Developer Pro $\cdot$ Azure AI Engineer $\cdot$ Oracle OCI GenAI Pro $\cdot$ IBM Multimodal GenAI $\cdot$ Oracle AI Agent Studio}
+\cvitem{\textcolor{accent}{\faChartLine}~\textbf{Data \& ML}}{IBM Data Science Pro $\cdot$ Oracle OCI Data Science Pro $\cdot$ Neo4j Graph Data Science $\cdot$ Google Data Analytics}
+\cvitem{\textcolor{accent}{\faDatabase}~\textbf{Database}}{MongoDB Associate Developer $\cdot$ Oracle AI Vector Search Pro $\cdot$ Neo4j Certified Professional}
+\cvitem{\textcolor{accent}{\faShieldAlt}~\textbf{Security}}{Google Cybersecurity Pro $\cdot$ Microsoft AI \& ML Foundations $\cdot$ Oracle OCI Foundations}
+\cvitem{}{\small\textit{\faGithub~~Full list of 66+ certifications at} \texttt{github.com/giulio-leone/cv}}
 
 % --- LANGUAGES ---
-\section{Languages}
+\iconsection{\faLanguage}{Languages}
 \cvitemwithcomment{Italian}{Native}{}
 \cvitemwithcomment{English}{C1 -- Advanced}{Daily professional use}
 
