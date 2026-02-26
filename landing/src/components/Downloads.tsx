@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import SpotlightCard from './SpotlightCard';
 
 const downloads = [
   {
@@ -65,36 +66,41 @@ export default function Downloads() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {downloads.map((d, i) => (
-            <motion.a
+            <motion.div
               key={d.href}
-              href={d.href}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
-              className={`group flex items-center gap-6 p-6 rounded-3xl glass-panel transition-all duration-500 hover:-translate-y-2 hover:bg-white/5 ${d.primary
-                ? 'border-white/20'
-                : 'border-white/5'
-                }`}
+              className="group transition-all duration-500 hover:-translate-y-2 h-full"
             >
-              <div className="text-text-muted group-hover:text-white transition-colors duration-500">
-                {d.icon}
-              </div>
-              <div>
-                <div className="font-bold text-lg text-white group-hover:tracking-wide transition-all duration-500">
-                  {d.title}
-                </div>
-                <div className="text-sm text-text-muted font-light mt-1 tracking-wide">{d.meta}</div>
-              </div>
-              <svg
-                className="w-5 h-5 ml-auto text-text-muted opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:text-white group-hover:translate-x-0 transition-all duration-500"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
+              <SpotlightCard
+                as="a"
+                href={d.href}
+                className={`flex items-center gap-6 p-6 h-full ${d.primary
+                  ? 'border-white/20'
+                  : 'border-white/5'
+                  }`}
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.a>
+                <div className="text-text-muted group-hover:text-white transition-colors duration-500 z-20">
+                  {d.icon}
+                </div>
+                <div className="z-20">
+                  <div className="font-bold text-lg text-white group-hover:tracking-wide transition-all duration-500">
+                    {d.title}
+                  </div>
+                  <div className="text-sm text-text-muted font-light mt-1 tracking-wide">{d.meta}</div>
+                </div>
+                <svg
+                  className="w-5 h-5 ml-auto text-text-muted opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:text-white group-hover:translate-x-0 transition-all duration-500 z-20"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </SpotlightCard>
+            </motion.div>
           ))}
         </div>
       </div>

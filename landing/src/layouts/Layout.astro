@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import CustomCursor from '../components/CustomCursor'
+import AuroraBackground from '../components/AuroraBackground'
 
 interface Props { title?: string }
 const { title = 'Giulio Leone — Senior AI Engineer' } = Astro.props
@@ -25,9 +26,12 @@ const base = import.meta.env.BASE_URL
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
-<body class="overflow-x-hidden relative">
+<body class="overflow-x-hidden relative bg-background">
+  {/* Base global animated aurora layer */}
+  <AuroraBackground client:load />
+
   {/* Global grain texture for premium analog feel */}
-  <div class="noise-bg" aria-hidden="true"></div>
+  <div class="noise-bg pointer-events-none" aria-hidden="true"></div>
   
   {/* Custom fluid cursor */}
   <CustomCursor client:load />

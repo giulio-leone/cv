@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import SpotlightCard from './SpotlightCard';
 
 const stats = [
   { value: '7+', label: 'Years Experience' },
@@ -22,12 +23,14 @@ export default function Stats() {
               initial={{ opacity: 0, y: 30 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
-              className="text-center p-8 rounded-3xl glass-panel transition-transform duration-500 hover:scale-105"
+              className="transition-transform duration-500 hover:scale-105 h-full"
             >
-              <div className="text-5xl sm:text-6xl font-black mb-3 text-gradient">
-                {s.value}
-              </div>
-              <div className="text-xs tracking-[0.2em] font-medium uppercase text-text-muted">{s.label}</div>
+              <SpotlightCard className="text-center p-8 h-full flex flex-col justify-center items-center">
+                <div className="text-5xl sm:text-6xl font-black mb-3 text-gradient">
+                  {s.value}
+                </div>
+                <div className="text-xs tracking-[0.2em] font-medium uppercase text-text-muted">{s.label}</div>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>

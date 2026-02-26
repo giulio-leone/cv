@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import SpotlightCard from './SpotlightCard';
 
 const topCerts = [
   'AWS GenAI Developer Pro',
@@ -54,12 +55,14 @@ export default function Certifications() {
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{ delay: 0.3 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
-              className="group flex items-center gap-4 p-4 rounded-2xl glass-panel transition-all duration-500 hover:bg-white/5"
+              className="group transition-all duration-500 h-full"
             >
-              <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-black text-sm font-black shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500`}>
-                {cat.count}
-              </div>
-              <span className="text-sm font-semibold tracking-wide text-text-primary group-hover:text-white transition-colors">{cat.name}</span>
+              <SpotlightCard className="flex items-center gap-4 p-4 h-full">
+                <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-black text-sm font-black shadow-[0_0_15px_rgba(255,255,255,0.1)] group-hover:scale-110 transition-transform duration-500 z-20`}>
+                  {cat.count}
+                </div>
+                <span className="text-sm font-semibold tracking-wide text-text-primary group-hover:text-white transition-colors z-20">{cat.name}</span>
+              </SpotlightCard>
             </motion.div>
           ))}
         </div>
