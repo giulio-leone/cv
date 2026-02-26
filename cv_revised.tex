@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78, top=1.6cm, bottom=1.2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+\definecolor{accent}{HTML}{0891B2}
+\definecolor{darkaccent}{HTML}{155E75}
+\definecolor{lightbg}{HTML}{F0FDFA}
+\definecolor{tagbg}{HTML}{E0F2FE}
+\definecolor{tagtext}{HTML}{0C4A6E}
+\definecolor{metricgreen}{HTML}{059669}
+
+\newcommand{\skilltag}[1]{\tikz[baseline=(tag.base)]{\node[fill=tagbg, text=tagtext, rounded corners=3pt, inner sep=2.5pt, font=\footnotesize\sffamily] (tag) {#1};}}
+\newcommand{\metric}[1]{\textcolor{metricgreen}{\textbf{#1}}}
+\newcommand{\iconsection}[2]{\section{\texorpdfstring{\textcolor{accent}{#1}~~#2}{#2}}}
+
+\name{Giulio}{Leone}
+\title{Senior AI Engineer | GenAI \& LLM Specialist}
+\address{\faMapMarker*~~Rome, Italy}{}{\faPlane~~Willing to Relocate to Dubai / UAE}
+\phone[mobile]{+39~366~141~0914}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+
+\begin{document}
+\makecvtitle
+
+\iconsection{\faUserTie}{Professional Summary}
+\cvitem{}{Senior AI Engineer with \textbf{5+ years of experience} designing and deploying end-to-end Generative AI solutions. Specialized in \textbf{RAG systems}, \textbf{Agentic AI}, \textbf{Generative UI}, and production-grade LLM integration. Strong Full-Stack background (Python, React/Next.js) enabling delivery of complete AI products — from model to user interface. \textbf{66+ technical certifications} (AWS, Microsoft, Google, Oracle, IBM). Master's degree in Management Engineering.}
+
+\iconsection{\faBriefcase}{Professional Experience}
+\cventry{Jan 2020 -- Present}{AI Engineer \& Full-Stack Consultant}{Independent Consultant}{Rome, Italy}{}{
+Technical lead for AI architecture and end-to-end software development for clients in \textbf{E-commerce, FinTech, and IoT} sectors.
+\begin{itemize}
+    \item \textbf{Agentic AI \& Generative UI:} Designed an OmniApp with autonomous AI agents and Generative UI, rendering React components in real-time via LLMs (LangChain, Vercel AI SDK). Multi-agent orchestration with fallback handling and streaming. \metric{$\downarrow$40\% UI dev time.}
+    \item \textbf{Enterprise RAG Systems:} Built hybrid RAG pipelines (Vector + BM25 + iterative disambiguation) on 50K+ documents. \metric{$\downarrow$30\% hallucinations} on enterprise chatbots.
+    \item \textbf{Full-Stack Platforms:} Delivered 5+ enterprise dashboards (React + Redux) and high-perf backends (FastAPI/Django). \metric{$<$800ms P95 latency} via Redis + CDN caching.
+    \item \textbf{Legacy Modernization:} Led COBOL→Python migration ($\sim$50K LOC) using AI-assisted translation. \metric{$\uparrow$60\% rewrite speed.}
+    \item \textbf{AI-Augmented Dev:} Daily use of GitHub Copilot, Cursor, Claude Code for development, debugging, and automated testing.
+    \item \textbf{DevOps \& Cloud:} CI/CD (GitHub Actions), Docker/K8s, Azure \& AWS deployments. OWASP compliance.
+\end{itemize}
+}
+
+\iconsection{\faLightbulb}{Key AI Projects}
+\cvitem{\textbf{OmniApp GenUI}}{Generative UI with AI agents rendering React in real-time. \skilltag{Next.js} \skilltag{Vercel AI SDK} \skilltag{LangChain} \skilltag{GPT-4} — \metric{$\downarrow$40\%} time-to-feature.}
+\cvitem{\textbf{Enterprise RAG}}{Semantic search for 50K+ docs. Hybrid vector + BM25 with disambiguation. \skilltag{Pinecone} \skilltag{ChromaDB} — \metric{+30\%} accuracy.}
+\cvitem{\textbf{IoT Dashboard}}{Real-time industrial monitoring. \skilltag{React} \skilltag{FastAPI} \skilltag{WebSocket} \skilltag{TimescaleDB} — \metric{10K+ pts/sec}, $<$200ms.}
+
+\iconsection{\faLaptopCode}{Technical Skills}
+\cvitem{\textbf{AI \& GenAI}}{\skilltag{OpenAI} \skilltag{Anthropic} \skilltag{LangChain} \skilltag{LangGraph} \skilltag{Vercel AI SDK} \skilltag{RAG} \skilltag{Agentic AI} \skilltag{CrewAI} \skilltag{Generative UI} \skilltag{Prompt Eng.}}
+\cvitem{\textbf{ML \& Data}}{\skilltag{Python} \skilltag{Pandas} \skilltag{NumPy} \skilltag{Scikit-learn} \skilltag{Keras} \skilltag{Pinecone} \skilltag{ChromaDB} \skilltag{Neo4j}}
+\cvitem{\textbf{Full-Stack}}{\skilltag{React/Next.js} \skilltag{TypeScript} \skilltag{Angular} \skilltag{Vue.js} \skilltag{Tailwind} \skilltag{Django} \skilltag{FastAPI} \skilltag{Node.js} \skilltag{GraphQL}}
+\cvitem{\textbf{Cloud/DevOps}}{\skilltag{AWS} \skilltag{Azure} \skilltag{Docker} \skilltag{Kubernetes} \skilltag{GitHub Actions} \skilltag{Terraform}}
+
+\iconsection{\faGraduationCap}{Education}
+\cventry{Expected 2026}{Master's in Management Engineering -- Digital Transformation}{Università Unimercatorum}{Italy}{GPA: 27/30}{
+\begin{itemize}
+    \item \textbf{Thesis:} Framework for Generative UI and embedding-free RAG for enterprise systems.
+\end{itemize}
+}
+\cventry{2018 -- 2021}{Bachelor's in Management Engineering (L-9)}{Università Niccolò Cusano}{Italy}{}{ Thesis on K-Nearest Neighbors (KNN) algorithm applications.}
+
+\iconsection{\faCertificate}{Certifications (Selection from 66+)}
+\cvitem{\textbf{AI \& GenAI}}{AWS Certified GenAI Developer Pro · Azure AI Engineer · Oracle OCI GenAI Pro · IBM Multimodal GenAI · Oracle AI Agent Studio}
+\cvitem{\textbf{Data \& ML}}{IBM Data Science Pro · Oracle OCI Data Science Pro · Neo4j Graph Data Science · Google Data Analytics}
+\cvitem{\textbf{Database}}{MongoDB Associate Developer · Oracle AI Vector Search Pro · Neo4j Certified Professional}
+\cvitem{\textbf{Security}}{Google Cybersecurity Pro · Microsoft AI \& ML Foundations · Oracle OCI Foundations}
+
+\iconsection{\faLanguage}{Languages}
+\cvitemwithcomment{Italian}{Native}{}
+\cvitemwithcomment{English}{C1 -- Advanced}{Daily professional use}
+\end{document}

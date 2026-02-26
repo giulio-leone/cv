@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% --- STILE ---
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% --- PACCHETTI ---
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78, top=1.6cm, bottom=1.2cm]{geometry}
+\usepackage[italian]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
+\usepackage{fontawesome5}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabularx}
+
+% --- COLORI PERSONALIZZATI ---
+\definecolor{accent}{HTML}{0891B2}
+\definecolor{darkaccent}{HTML}{155E75}
+\definecolor{lightbg}{HTML}{F0FDFA}
+\definecolor{tagbg}{HTML}{E0F2FE}
+\definecolor{tagtext}{HTML}{0C4A6E}
+\definecolor{metricgreen}{HTML}{059669}
+
+% --- COMANDI PERSONALIZZATI ---
+\newcommand{\skilltag}[1]{%
+  \tikz[baseline=(tag.base)]{%
+    \node[fill=tagbg, text=tagtext, rounded corners=3pt, inner sep=2.5pt, font=\footnotesize\sffamily] (tag) {#1};%
+  }%
+}
+\newcommand{\metric}[1]{\textcolor{metricgreen}{\textbf{#1}}}
+\newcommand{\iconsection}[2]{%
+  \section{\texorpdfstring{\textcolor{accent}{#1}~~#2}{#2}}%
+}
+
+% --- DATI PERSONALI ---
+\name{Giulio}{Leone}
+\title{\textcolor{accent}{\faRobot}~~AI Engineer | GenAI \& LLM Specialist}
+\address{\faMapMarker*~~Roma, Italia}{}{\faPlane~~Disponibile al trasferimento a Dubai/UAE}
+\phone[mobile]{+39~366~141~0914~~\small{(\faWhatsapp~WhatsApp / \faTelegram~Telegram)}}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+
+% --- INIZIO DOCUMENTO ---
+\begin{document}
+
+\makecvtitle
+
+% --- PROFILO ---
+\iconsection{\faUserTie}{Profilo Professionale}
+\cvitem{}{AI Engineer con \textbf{5+ anni di esperienza} nella progettazione e implementazione di soluzioni di Intelligenza Artificiale Generativa end-to-end. Specializzato in \textbf{sistemi RAG}, \textbf{Agentic AI}, \textbf{Generative UI} e integrazione LLM in architetture production-grade. Background Full-Stack (Python, React/Next.js) che consente di consegnare soluzioni AI complete, dal modello all'interfaccia utente. \textbf{66+ certificazioni} tecniche (AWS, Microsoft, Google, Oracle, IBM, MongoDB, Neo4j). Laurea Magistrale in Ingegneria Gestionale con tesi su Generative UI e RAG.}
+
+% --- ESPERIENZA ---
+\iconsection{\faBriefcase}{Esperienza Professionale}
+
+\cventry{Gen 2020 -- Presente}{AI Engineer \& Full-Stack Consultant}{Consulente Indipendente}{Roma}{}{
+Referente tecnico per architettura AI e sviluppo software end-to-end per clienti nei settori \textbf{E-commerce, FinTech e IoT}.
+\vspace{0.3em}
+\begin{itemize}
+    \item \textbf{\textcolor{accent}{\faRobot}~Agentic AI \& Generative UI:} Progettato un'OmniApp con agenti AI autonomi e Generative UI, generando interfacce React in tempo reale tramite LLM (LangChain, Vercel AI SDK). Orchestrazione multi-agente con fallback e streaming. \metric{$\downarrow$40\% tempi sviluppo UI.}
+    \item \textbf{\textcolor{accent}{\faSearch}~Sistemi RAG Enterprise:} Pipeline RAG ibride (Vector + BM25 + disambiguation iterativa) su 50K+ documenti. \metric{$\downarrow$30\% allucinazioni} su chatbot aziendali.
+    \item \textbf{\textcolor{accent}{\faCode}~Piattaforme Full-Stack:} 5+ dashboard aziendali (React + Redux) e backend ad alte prestazioni (FastAPI/Django). \metric{$<$800ms latenza P95} con caching Redis + CDN.
+    \item \textbf{\textcolor{accent}{\faHistory}~Modernizzazione Legacy:} Migrazione COBOL→Python ($\sim$50K LOC) con AI-assisted translation. \metric{$\uparrow$60\% velocità riscrittura.}
+    \item \textbf{\textcolor{accent}{\faMagic}~AI-Augmented Dev:} Utilizzo quotidiano di GitHub Copilot, Cursor, Claude Code per sviluppo, debugging e test automatici.
+    \item \textbf{\textcolor{accent}{\faCloud}~DevOps \& Cloud:} CI/CD (GitHub Actions), Docker/K8s, deploy su Azure e AWS. Conformità OWASP.
+\end{itemize}
+}
+
+% --- PROGETTI CHIAVE ---
+\iconsection{\faLightbulb}{Progetti AI Chiave}
+\cvitem{\textcolor{accent}{\faWandMagicSparkles}~\textbf{OmniApp GenUI}}{Generative UI con agenti AI che generano componenti React in real-time. \skilltag{Next.js} \skilltag{Vercel AI SDK} \skilltag{LangChain} \skilltag{GPT-4} \textit{— \metric{$\downarrow$40\%} time-to-feature.}}
+\cvitem{\textcolor{accent}{\faDatabase}~\textbf{RAG Enterprise}}{Ricerca semantica su 50K+ documenti. Architettura ibrida vector + BM25 con disambiguation. \skilltag{Pinecone} \skilltag{ChromaDB} \textit{— \metric{+30\%} accuracy.}}
+\cvitem{\textcolor{accent}{\faMicrochip}~\textbf{IoT Dashboard}}{Piattaforma monitoraggio IoT industriale real-time. \skilltag{React} \skilltag{FastAPI} \skilltag{WebSocket} \skilltag{TimescaleDB} \textit{— \metric{10K+ pts/sec}, $<$200ms.}}
+
+% --- COMPETENZE TECNICHE ---
+\iconsection{\faLaptopCode}{Competenze Tecniche}
+\cvitem{\textcolor{accent}{\faBrain}~\textbf{AI \& GenAI}}{\skilltag{OpenAI} \skilltag{Anthropic} \skilltag{LangChain} \skilltag{LangGraph} \skilltag{Vercel AI SDK} \skilltag{RAG} \skilltag{Agentic AI} \skilltag{CrewAI} \skilltag{Generative UI} \skilltag{Prompt Eng.}}
+\cvitem{\textcolor{accent}{\faChartBar}~\textbf{ML \& Data}}{\skilltag{Python} \skilltag{Pandas} \skilltag{NumPy} \skilltag{Scikit-learn} \skilltag{Keras} \skilltag{Pinecone} \skilltag{ChromaDB} \skilltag{Neo4j}}
+\cvitem{\textcolor{accent}{\faCode}~\textbf{Full-Stack}}{\skilltag{React/Next.js} \skilltag{TypeScript} \skilltag{Angular} \skilltag{Vue.js} \skilltag{Tailwind} \skilltag{Django} \skilltag{FastAPI} \skilltag{Node.js} \skilltag{GraphQL}}
+\cvitem{\textcolor{accent}{\faCloud}~\textbf{Cloud/DevOps}}{\skilltag{AWS} \skilltag{Azure} \skilltag{Docker} \skilltag{Kubernetes} \skilltag{GitHub Actions} \skilltag{Terraform}}
+
+% --- ISTRUZIONE ---
+\iconsection{\faGraduationCap}{Istruzione}
+\cventry{Prevista 2026}{Laurea Magistrale in Ingegneria Gestionale -- Trasformazione Digitale}{Università Unimercatorum}{}{Media: 27/30}{
+\begin{itemize}
+    \item \textbf{Tesi:} Framework per Generative UI e RAG embedding-free per sistemi enterprise.
+    \item \textbf{Pubblicazioni:} 2 paper in fase di peer-review per riviste internazionali.
+\end{itemize}
+}
+\vspace{0.3em}
+\cventry{2018 -- 2021}{Laurea Triennale in Ingegneria Gestionale (L-9)}{Università Niccolò Cusano}{}{}{
+Tesi sperimentale sull'applicazione dell'algoritmo K-Nearest Neighbors (KNN).
+}
+
+% --- CERTIFICAZIONI ---
+\iconsection{\faCertificate}{Certificazioni (Selezione da 66+)}
+\cvitem{\textcolor{accent}{\faAws}~\textbf{AI \& GenAI}}{AWS Certified GenAI Developer Pro $\cdot$ Azure AI Engineer $\cdot$ Oracle OCI GenAI Pro $\cdot$ IBM Multimodal GenAI $\cdot$ Oracle AI Agent Studio}
+\cvitem{\textcolor{accent}{\faChartLine}~\textbf{Data \& ML}}{IBM Data Science Pro $\cdot$ Oracle OCI Data Science Pro $\cdot$ Neo4j Graph Data Science $\cdot$ Google Data Analytics}
+\cvitem{\textcolor{accent}{\faDatabase}~\textbf{Database}}{MongoDB Associate Developer $\cdot$ Oracle AI Vector Search Pro $\cdot$ Neo4j Certified Professional}
+\cvitem{\textcolor{accent}{\faShieldAlt}~\textbf{Security}}{Google Cybersecurity Pro $\cdot$ Microsoft AI \& ML Foundations $\cdot$ Oracle OCI Foundations}
+\cvitem{}{\small\textit{\faGithub~~Lista completa delle 66+ certificazioni su} \texttt{github.com/giulio-leone/cv}}
+
+% --- LINGUE ---
+\iconsection{\faLanguage}{Lingue}
+\cvitemwithcomment{Italiano}{Madrelingua}{}
+\cvitemwithcomment{Inglese}{C1}{Uso professionale quotidiano}
+
+% --- FOOTER GDPR ---
+\vfill
+\begin{center}
+    \footnotesize \textit{Autorizzo il trattamento dei dati personali ai sensi del D.Lgs. 196/2003 e del GDPR (Reg. UE 2016/679).}
+\end{center}
+
+\end{document}
