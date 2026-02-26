@@ -39,3 +39,8 @@ Thumbs.db
 
 # Logs
 logs/
+
+# Landing page build artifacts
+landing/node_modules/
+landing/dist/
+landing/.astro/

@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ParticleNetwork from '../components/ParticleNetwork'
+import Hero from '../components/Hero'
+import Stats from '../components/Stats'
+import Downloads from '../components/Downloads'
+import Certifications from '../components/Certifications'
+import Contact from '../components/Contact'
+---
+
+<Layout>
+  <ParticleNetwork client:only="react" />
+  <main class="relative z-10">
+    <Hero client:load />
+    <Stats client:visible />
+    <Downloads client:visible />
+    <Certifications client:visible />
+    <Contact client:visible />
+  </main>
+</Layout>
