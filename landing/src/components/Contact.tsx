@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
+import AnimatedLink from './AnimatedLink';
 
 const links = [
   {
@@ -81,16 +82,16 @@ export default function Contact() {
           className="flex flex-wrap justify-center gap-4"
         >
           {links.map((l) => (
-            <a
+            <AnimatedLink
               key={l.label}
               href={l.href}
               target={l.href.startsWith('http') ? '_blank' : undefined}
               rel={l.href.startsWith('http') ? 'noopener' : undefined}
-              className="group inline-flex items-center gap-3 px-6 py-3 rounded-full border border-white/10 glass-panel text-text-muted font-medium text-sm hover:border-white/30 hover:text-white hover:bg-white/5 hover:scale-105 transition-all duration-300"
+              icon={l.icon}
+              className="px-6 py-3 rounded-full border border-white/10 glass-panel text-text-muted font-medium text-sm hover:border-white/30 hover:bg-white/5 hover:shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300"
             >
-              <span className="text-text-muted group-hover:text-white transition-colors duration-300">{l.icon}</span>
               {l.label}
-            </a>
+            </AnimatedLink>
           ))}
         </motion.div>
 

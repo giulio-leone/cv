@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import ParticleNetwork from '../components/ParticleNetwork'
 import Hero from '../components/Hero'
+import Marquee from '../components/Marquee'
 import Stats from '../components/Stats'
 import Downloads from '../components/Downloads'
 import Certifications from '../components/Certifications'
@@ -12,6 +13,15 @@ import Contact from '../components/Contact'
   <ParticleNetwork client:only="react" />
   <main class="relative z-10">
     <Hero client:load />
+    <Marquee 
+      client:visible 
+      items={[
+        "Generative AI", "RAG Systems", "LLMs", "LangChain", 
+        "React", "TypeScript", "Node.js", "Python", 
+        "Machine Learning", "System Architecture"
+      ]} 
+      speed={40} 
+    />
     <Stats client:visible />
     <Downloads client:visible />
     <Certifications client:visible />

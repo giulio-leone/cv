@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import SpotlightCard from './SpotlightCard';
 
@@ -52,9 +52,12 @@ export default function Downloads() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const yParallax = useTransform(scrollYProgress, [0, 1], [60, -60]);
+
   return (
     <section id="downloads" ref={ref} className="py-24 px-6 relative z-10">
-      <div className="max-w-4xl mx-auto">
+      <motion.div style={{ y: yParallax }} className="max-w-4xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -103,7 +106,7 @@ export default function Downloads() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

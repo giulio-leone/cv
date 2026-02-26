@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import SpotlightCard from './SpotlightCard';
 
@@ -12,10 +12,12 @@ const stats = [
 export default function Stats() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: '-100px' });
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
+  const yParallax = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
     <section ref={ref} className="py-24 px-6 relative z-10">
-      <div className="max-w-5xl mx-auto">
+      <motion.div style={{ y: yParallax }} className="max-w-5xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
           {stats.map((s, i) => (
             <motion.div
@@ -34,7 +36,7 @@ export default function Stats() {
             </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

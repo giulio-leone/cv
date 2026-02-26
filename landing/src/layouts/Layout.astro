@@ -24,9 +24,16 @@ const base = import.meta.env.BASE_URL
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
 <body class="overflow-x-hidden relative bg-background">
+  {/* Global Preloader for true Awwwards feel - Vanilla JS to avoid React Hydration FOUC */}
+  <div id="global-preloader" class="fixed inset-0 z-[99999] bg-background flex flex-col items-center justify-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.76,0,0.24,1)]">
+    <div class="overflow-hidden">
+      <div id="preloader-counter" class="text-6xl md:text-8xl font-light text-foreground translate-y-[100%] transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]" style="font-family: 'Playfair Display', serif;">000</div>
+    </div>
+  </div>
+
   {/* Base global animated aurora layer */}
   <AuroraBackground client:load />
 
@@ -37,5 +44,70 @@ const base = import.meta.env.BASE_URL
   <CustomCursor client:load />
   
   <slot />
+
+  <script>
+    import Lenis from 'lenis';
+
+    // Lenis Setup
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    // Preloader Logic
+    document.addEventListener("DOMContentLoaded", () => {
+      const preloader = document.getElementById('global-preloader');
+      const counter = document.getElementById('preloader-counter');
+      if (!preloader || !counter) return;
+
+      let progress = 0;
+      
+      // Initial Reveal of counter
+      setTimeout(() => {
+        counter.style.transform = 'translateY(0)';
+      }, 50);
+
+      // We want to count exactly from 000 to 100
+      const updateCounter = () => {
+        counter.innerText = progress.toString().padStart(3, '0');
+      };
+
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 4) + 1; // slow increment for effect
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          updateCounter();
+          
+          // Slide counter down
+          setTimeout(() => {
+            counter.style.transform = 'translateY(100%)';
+            // Slide preloader up
+            setTimeout(() => {
+              preloader.style.transform = 'translateY(-100%)';
+              // Dispatch event to start hero animations
+              (window as any).preloaderDone = true;
+              window.dispatchEvent(new CustomEvent('preloaderComplete'));
+            }, 600);
+          }, 400);
+        } else {
+          updateCounter();
+        }
+      }, 20); 
+    });
+  </script>
 </body>
 </html>

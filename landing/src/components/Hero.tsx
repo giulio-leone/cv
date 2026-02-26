@@ -1,9 +1,11 @@
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useScroll, useTransform, useMotionValue, useSpring, useAnimation } from 'framer-motion';
 import { useRef, useEffect } from 'react';
 import MagneticButton from './MagneticButton';
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const controls = useAnimation();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"]
@@ -37,6 +39,16 @@ export default function Hero() {
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
+  useEffect(() => {
+    if ((window as any).preloaderDone) {
+      controls.start("visible");
+    } else {
+      window.addEventListener('preloaderComplete', () => {
+        controls.start("visible");
+      });
+    }
+  }, [controls]);
+
   // Cinematic reveal animation variant
   const revealVariant = {
     hidden: { y: '120%', rotate: 2 },
@@ -55,7 +67,8 @@ export default function Hero() {
     visible: {
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        // Wait just a tiny bit after preloader before starting text
+        delayChildren: 0.1,
       }
     }
   };
@@ -81,14 +94,14 @@ export default function Hero() {
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate="visible"
+          animate={controls}
           className="flex flex-col items-center justify-center"
         >
           {/* Subtle Tagline */}
           <div className="mb-6 overflow-hidden">
             <motion.p
               variants={revealVariant}
-              className="text-accent/80 font-semibold tracking-[0.3em] uppercase text-xs md:text-sm"
+              className="text-text-muted/80 font-serif italic text-lg md:text-xl"
             >
               Transforming Ideas into Intelligent Systems
             </motion.p>
@@ -101,12 +114,12 @@ export default function Hero() {
 
           {/* Subtitle */}
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-light text-text-muted mb-10 tracking-tight flex flex-col items-center">
-            <CinematicText text="Senior AI Engineer" className="font-medium text-white" />
-            <span className="flex gap-3 overflow-hidden mt-2">
+            <CinematicText text="Senior AI Engineer" className="font-serif italic text-white" />
+            <span className="flex gap-3 overflow-hidden mt-2 font-sans tracking-normal">
               <motion.span variants={revealVariant}>Focus in</motion.span>
-              <motion.span variants={revealVariant} className="text-white italic">RAG</motion.span>
+              <motion.span variants={revealVariant} className="text-white font-serif italic pr-1">RAG</motion.span>
               <motion.span variants={revealVariant}>&</motion.span>
-              <motion.span variants={revealVariant} className="text-white italic">LLM Systems</motion.span>
+              <motion.span variants={revealVariant} className="text-white font-serif italic pr-1">LLM Systems</motion.span>
             </span>
           </h2>
 
