@@ -1,19 +1,19 @@
 {
   "hero": {
-    "tagline": "Transforming Ideas into Intelligent Systems",
+    "tagline": "Building AI Platforms Ready for GCC Scale",
     "name": "Giulio Leone.",
     "title": "Senior AI Engineer",
     "specializations": ["GenAI", "RAG", "LLM Systems"],
-    "description": "7+ years bridging the gap between cutting-edge artificial intelligence and robust, scalable full-stack applications.",
+    "description": "7+ years delivering production-grade AI systems for enterprise and product teams, with a strong focus on reliability, speed, and measurable business outcomes. Open to Dubai/UAE opportunities.",
     "ctaPrimary": "Download Résumé",
-    "ctaSecondary": "Let's Talk",
+    "ctaSecondary": "Schedule Intro Call",
     "ctaSecondaryUrl": "https://wa.me/393661410914"
   },
   "meta": {
     "siteTitle": "Giulio Leone — Senior AI Engineer",
-    "siteDescription": "Senior AI Engineer specializing in RAG, Agentic AI, and LLM Systems. 7+ years, 66+ certifications. Open to UAE.",
+    "siteDescription": "Senior AI Engineer specializing in RAG and LLM systems. 7+ years, 66+ certifications, and available for Dubai/UAE roles.",
     "ogTitle": "Giulio Leone — Senior AI Engineer",
-    "ogDescription": "RAG · Agentic AI · LLM Systems · 66+ Certifications · Open to UAE"
+    "ogDescription": "RAG · LLM Systems · 66+ Certifications · Dubai/UAE-ready Senior AI Engineer"
   },
   "links": [
     { "label": "LinkedIn", "href": "https://www.linkedin.com/in/giulioleone1/", "type": "linkedin" },
