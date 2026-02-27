@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css'
 import CustomCursor from '../components/CustomCursor'
+import ParticleNetwork from '../components/ParticleNetwork'
 import ThemeToggle from '../components/ThemeToggle'
 import content from '../data/content.json'
 
@@ -66,6 +67,7 @@ const { title = content.meta.siteTitle } = Astro.props
 
   {/* Custom fluid cursor */}
   <CustomCursor client:load />
+  <ParticleNetwork client:load />
   <ThemeToggle client:load />
   
   <slot />
