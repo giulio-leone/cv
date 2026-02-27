@@ -1,15 +1,11 @@
 ---
 import '../styles/global.css'
 import CustomCursor from '../components/CustomCursor'
-import AuroraBackground from '../components/AuroraBackground'
 import ThemeToggle from '../components/ThemeToggle'
 import content from '../data/content.json'
 
 interface Props { title?: string }
 const { title = content.meta.siteTitle } = Astro.props
-const downloadBase = 'https://github.com/giulio-leone/cv/raw/main/output'
-const preferredDownload = content.downloads.find((item) => item.badge) ?? content.downloads[0]
-const preferredDownloadHref = `${downloadBase}/${preferredDownload.filename}`
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-theme-mode="auto">
@@ -58,7 +54,6 @@ const preferredDownloadHref = `${downloadBase}/${preferredDownload.filename}`
   <link rel="dns-prefetch" href="//github.com" />
   <link rel="preconnect" href="https://raw.githubusercontent.com" />
   <link rel="dns-prefetch" href="//raw.githubusercontent.com" />
-  <link rel="prefetch" href={preferredDownloadHref} as="document" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
 <body class="overflow-hidden relative bg-background text-text-primary h-[100dvh] w-full">
@@ -69,14 +64,6 @@ const preferredDownloadHref = `${downloadBase}/${preferredDownload.filename}`
     </div>
   </div>
 
-  {/* Base global animated aurora layer */}
-  <AuroraBackground client:load />
-
-  {/* Global grain texture for premium analog feel */}
-  <div class="noise-bg pointer-events-none" aria-hidden="true"></div>
-  
-  {/* AI/Data Science Contextual Grid */}
-  <div class="blueprint-grid pointer-events-none" aria-hidden="true"></div>
   {/* Custom fluid cursor */}
   <CustomCursor client:load />
   <ThemeToggle client:load />

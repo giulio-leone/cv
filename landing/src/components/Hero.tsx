@@ -16,10 +16,16 @@ const allDownloads = content.downloads.map((item) => ({
 
 const preferredDownload = allDownloads.find((item) => item.recommended) ?? allDownloads[0];
 
-const dubaiPositioningPills = [
-  'Open to Dubai/UAE relocation',
+const relocationPositioningPills = [
+  'Open to international relocation',
   'Enterprise-grade AI delivery',
   '7+ years across AI + full stack',
+];
+
+const availabilityPoints = [
+  'CET-based with flexible timezone overlap',
+  'Available for fast interview loops',
+  'Hands-on from architecture to delivery',
 ];
 
 // Icon map for social links
@@ -185,157 +191,180 @@ export default function Hero() {
     </div>
   );
 
+  const impactStats = [
+    { label: 'Certifications', value: `${content.certifications.total}+` },
+    { label: 'Years', value: '7+' },
+    { label: 'Reply speed', value: '24h' },
+  ];
+
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-full flex flex-col items-center justify-center p-6 overflow-hidden perspective-1000"
+      className="relative w-full h-full flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden perspective-1000"
     >
       <motion.div
         style={{
           ...(isDesktop && !prefersReducedMotion ? { rotateX: springRotateX, rotateY: springRotateY } : {})
         }}
-        className="text-center z-10 max-w-5xl mx-auto transform-style-3d relative w-full"
+        className="z-10 max-w-6xl mx-auto transform-style-3d relative w-full"
       >
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           animate={controls}
-          className="flex flex-col items-center justify-center"
+          className="premium-shell relative overflow-hidden rounded-[30px] md:rounded-[36px] p-6 md:p-10"
         >
-          {/* Subtle Tagline */}
-          <div className="mb-6 overflow-hidden">
-            <motion.p
-              variants={revealVariant}
-              className="text-text-muted font-serif italic text-lg md:text-xl"
-            >
-              {content.hero.tagline}
-            </motion.p>
-          </div>
 
-          {/* Epic Main Title */}
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tighter mb-2 md:mb-4 flex flex-col items-center">
-            <CinematicText text={content.hero.name} className="text-gradient drop-shadow-2xl lowercase pr-2" />
-          </h1>
+          <div className="relative grid lg:grid-cols-[1.45fr_0.85fr] gap-8 md:gap-10 items-start">
+            <div className="text-center lg:text-left">
+              <div className="mb-4 overflow-hidden">
+                <motion.p variants={revealVariant} className="text-text-muted font-serif italic text-base md:text-lg tracking-wide">
+                  {content.hero.tagline}
+                </motion.p>
+              </div>
 
-          {/* Subtitle */}
-          <h2 className="text-xl sm:text-2xl md:text-4xl lg:text-5xl font-light text-text-muted mb-6 md:mb-10 tracking-tight flex flex-col items-center">
-            <CinematicText text={content.hero.title} className="font-serif italic text-foreground" />
-            <span className="flex gap-2 sm:gap-3 overflow-hidden mt-1 md:mt-2 font-sans tracking-normal">
-              {content.hero.specializations.map((spec, i) => (
-                <span key={spec} className="flex gap-2 sm:gap-3">
-                  {i > 0 && <motion.span variants={revealVariant} className="text-text-muted">·</motion.span>}
-                  <motion.span variants={revealVariant} className="text-foreground font-serif italic pr-1">{spec}</motion.span>
+              <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-3 md:mb-4 flex flex-col items-center lg:items-start">
+                <CinematicText text={content.hero.name} className="text-gradient lowercase pr-2" />
+              </h1>
+
+              <h2 className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-light text-text-muted mb-5 md:mb-7 tracking-tight flex flex-col items-center lg:items-start">
+                <CinematicText text={content.hero.title} className="font-serif italic text-foreground" />
+                <span className="flex flex-wrap gap-2 sm:gap-3 overflow-hidden mt-2 justify-center lg:justify-start">
+                  {content.hero.specializations.map((spec, i) => (
+                    <span key={spec} className="flex gap-2 sm:gap-3 items-center">
+                      {i > 0 && <motion.span variants={revealVariant} className="text-text-muted">·</motion.span>}
+                      <motion.span variants={revealVariant} className="text-foreground/90 font-serif italic">{spec}</motion.span>
+                    </span>
+                  ))}
                 </span>
-              ))}
-            </span>
-          </h2>
+              </h2>
 
-          <div className="overflow-hidden mt-2 md:mt-4">
-            <motion.p
-              variants={revealVariant}
-              className="max-w-2xl mx-auto text-text-muted text-base md:text-xl font-light mb-6 md:mb-8 leading-relaxed px-4"
-            >
-              {content.hero.description}
-            </motion.p>
-          </div>
-
-          <div className="overflow-hidden w-full px-4 mb-4 md:mb-6">
-            <motion.ul
-              variants={revealVariant}
-              className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3"
-              aria-label="Dubai positioning highlights"
-            >
-              {dubaiPositioningPills.map((pill) => (
-                <li
-                  key={pill}
-                  className="inline-flex items-center rounded-full border border-foreground/16 bg-foreground/6 px-3.5 py-1.5 text-[10px] md:text-xs uppercase tracking-[0.12em] text-text-primary"
+              <div className="overflow-hidden">
+                <motion.p
+                  variants={revealVariant}
+                  className="max-w-3xl text-text-muted text-sm md:text-lg font-light mb-6 md:mb-7 leading-relaxed"
                 >
-                  {pill}
-                </li>
-              ))}
-            </motion.ul>
-          </div>
+                  {content.hero.description}
+                </motion.p>
+              </div>
 
-          {/* Certification Badges — Cinematic 3D Interactive */}
-          <div className="mb-6 md:mb-8 w-full">
-            <CertBadges isVisible={animationsStarted} />
-          </div>
+              <div className="overflow-hidden mb-5 md:mb-7">
+                <motion.ul
+                  variants={revealVariant}
+                  className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5"
+                  aria-label="Relocation positioning highlights"
+                >
+                  {relocationPositioningPills.map((pill) => (
+                    <li
+                      key={pill}
+                      className="inline-flex items-center rounded-full border border-foreground/16 bg-foreground/7 px-3.5 py-1.5 text-[10px] md:text-[11px] uppercase tracking-[0.12em] text-text-primary"
+                    >
+                      {pill}
+                    </li>
+                  ))}
+                </motion.ul>
+              </div>
 
-          {/* Actions - Using Magnetic Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center overflow-hidden pt-2 md:pt-4 w-full px-6">
-            <motion.div variants={revealVariant} className="z-20 relative">
-              <MagneticButton
-                href={preferredDownload.href}
-                onClick={() => emitDownloadIntent('hero-primary-quick-download')}
-                className="!inline-flex items-center justify-center px-10 py-5 bg-foreground text-background font-bold rounded-full hover:bg-foreground/90 transition-colors shadow-xl hover:shadow-2xl uppercase tracking-wide text-sm gap-3"
-              >
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
-                </svg>
-                Download CV now
-              </MagneticButton>
-            </motion.div>
+              <div className="flex flex-col sm:flex-row gap-3.5 justify-center lg:justify-start overflow-hidden">
+                <motion.div variants={revealVariant} className="z-20 relative">
+                  <MagneticButton
+                    href={preferredDownload.href}
+                    onClick={() => emitDownloadIntent('hero-primary-quick-download')}
+                    className="!inline-flex items-center justify-center px-8 py-4 bg-foreground text-background font-bold rounded-full hover:bg-foreground/90 transition-colors shadow-xl hover:shadow-2xl uppercase tracking-[0.14em] text-[11px] gap-3"
+                  >
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
+                    </svg>
+                    Download CV now
+                  </MagneticButton>
+                </motion.div>
 
-            <motion.div variants={revealVariant} className="z-20 relative">
-              <MagneticButton
-                onClick={() => {
-                  setShowModal(true);
-                  emitDownloadIntent('hero-open-format-modal');
-                }}
-                className="!inline-flex items-center justify-center px-10 py-5 border border-foreground/20 text-foreground font-semibold rounded-full hover:bg-foreground/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm gap-3"
-              >
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                All formats
-              </MagneticButton>
-            </motion.div>
+                <motion.div variants={revealVariant} className="z-20 relative">
+                  <MagneticButton
+                    onClick={() => {
+                      setShowModal(true);
+                      emitDownloadIntent('hero-open-format-modal');
+                    }}
+                    className="!inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-foreground font-semibold rounded-full hover:bg-foreground/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-[0.14em] text-[11px] gap-3"
+                  >
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    All formats
+                  </MagneticButton>
+                </motion.div>
+              </div>
 
-            <motion.div variants={revealVariant} className="z-20 relative hidden sm:block">
+              <div className="overflow-hidden mt-4">
+                <motion.p variants={revealVariant} className="text-xs md:text-sm text-text-muted text-center lg:text-left">
+                  Fast track: <span className="text-foreground/90">{preferredDownload.label}</span> · CET-based with flexible overlap ·
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowModal(true);
+                      emitDownloadIntent('hero-inline-format-selector');
+                    }}
+                    className="ml-1 underline decoration-foreground/35 underline-offset-4 hover:decoration-foreground hover:text-foreground transition-colors"
+                  >
+                    choose another version
+                  </button>
+                </motion.p>
+              </div>
+
+              <div className="overflow-hidden mt-7 md:mt-8">
+                <motion.div variants={revealVariant} className="flex flex-wrap gap-5 md:gap-6 items-center justify-center lg:justify-start z-20">
+                  {content.links.map((l) => (
+                    <AnimatedLink
+                      key={l.label}
+                      href={l.href}
+                      target="_blank"
+                      rel="noopener"
+                      icon={iconMap[l.type]}
+                      className="text-text-muted hover:text-foreground transition-colors uppercase tracking-widest text-[10px] font-semibold"
+                    >
+                      {l.label}
+                    </AnimatedLink>
+                  ))}
+                </motion.div>
+              </div>
+            </div>
+
+            <motion.aside variants={revealVariant} className="premium-panel rounded-2xl md:rounded-3xl p-5 md:p-6 text-left">
+              <p className="text-[10px] uppercase tracking-[0.2em] text-text-muted mb-3">Relocation-ready profile</p>
+              <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-4">Impact snapshot</h3>
+
+              <div className="grid grid-cols-3 gap-2 mb-5">
+                {impactStats.map((stat) => (
+                  <div key={stat.label} className="rounded-xl border border-foreground/14 bg-foreground/6 p-3 text-center">
+                    <p className="text-base md:text-lg font-bold text-foreground">{stat.value}</p>
+                    <p className="text-[9px] md:text-[10px] uppercase tracking-[0.12em] text-text-muted">{stat.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <ul className="space-y-2.5 mb-5">
+                {availabilityPoints.map((point) => (
+                  <li key={point} className="flex items-start gap-2 text-xs md:text-sm text-text-primary">
+                    <span className="mt-1 h-1.5 w-1.5 rounded-full bg-foreground/70" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+
               <MagneticButton
                 href={content.hero.ctaSecondaryUrl}
-                className="!inline-flex items-center justify-center px-10 py-5 border border-foreground/20 text-foreground font-semibold rounded-full hover:bg-foreground/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm gap-3"
+                className="!inline-flex w-full items-center justify-center px-4 py-3 border border-foreground/22 text-foreground font-semibold rounded-xl hover:bg-foreground/6 transition-colors uppercase tracking-[0.14em] text-[10px] gap-2"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 {content.hero.ctaSecondary}
               </MagneticButton>
-            </motion.div>
+            </motion.aside>
           </div>
 
-          <div className="overflow-hidden mt-4 w-full flex justify-center px-6">
-            <motion.p variants={revealVariant} className="text-xs md:text-sm text-text-muted text-center">
-              Fast track: <span className="text-foreground/90">{preferredDownload.label}</span> · CET-based with UAE overlap ·
-              <button
-                type="button"
-                onClick={() => {
-                  setShowModal(true);
-                  emitDownloadIntent('hero-inline-format-selector');
-                }}
-                className="ml-1 underline decoration-foreground/35 underline-offset-4 hover:decoration-foreground hover:text-foreground transition-colors"
-              >
-                choose another version
-              </button>
-            </motion.p>
-          </div>
-
-          {/* Social Links */}
-          <div className="overflow-hidden mt-8 md:mt-12 w-full flex justify-center">
-            <motion.div variants={revealVariant} className="flex flex-wrap gap-6 md:gap-8 items-center justify-center z-20">
-              {content.links.map((l) => (
-                <AnimatedLink
-                  key={l.label}
-                  href={l.href}
-                  target="_blank"
-                  rel="noopener"
-                  icon={iconMap[l.type]}
-                  className="text-text-muted hover:text-foreground transition-colors uppercase tracking-widest text-xs font-semibold"
-                >
-                  {l.label}
-                </AnimatedLink>
-              ))}
-            </motion.div>
+          <div className="relative mt-8 md:mt-10">
+            <CertBadges isVisible={animationsStarted} />
           </div>
         </motion.div>
       </motion.div>

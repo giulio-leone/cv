@@ -73,7 +73,7 @@ export default function Contact() {
           transition={{ delay: 0.3, duration: 0.8 }}
           className="text-text-muted mb-16 text-sm uppercase tracking-[0.2em] font-medium"
         >
-          EU citizen · Immediately available · Open to UAE work visa sponsorship
+          EU citizen · Immediately available · Open to international relocation and visa sponsorship
         </motion.p>
 
         <motion.div
