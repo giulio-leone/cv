@@ -7,6 +7,15 @@ import CertBadges from './CertBadges';
 import content from '../data/content.json';
 import { EASE_OUT_QUART } from '../lib/motion';
 
+const DOWNLOAD_BASE = 'https://github.com/giulio-leone/cv/raw/main/output';
+const allDownloads = content.downloads.map((item) => ({
+  label: item.label,
+  href: `${DOWNLOAD_BASE}/${item.filename}`,
+  recommended: Boolean(item.badge),
+}));
+
+const preferredDownload = allDownloads.find((item) => item.recommended) ?? allDownloads[0];
+
 // Icon map for social links
 const iconMap: Record<string, JSX.Element> = {
   linkedin: (
@@ -41,6 +50,20 @@ export default function Hero() {
   const controls = useAnimation();
   const [showModal, setShowModal] = useState(false);
   const [animationsStarted, setAnimationsStarted] = useState(false);
+
+  const emitDownloadIntent = (source: string) => {
+    if (typeof window === 'undefined') return;
+
+    window.dispatchEvent(
+      new CustomEvent('cv-download-intent', {
+        detail: {
+          source,
+          file: preferredDownload.label,
+          timestamp: Date.now(),
+        },
+      })
+    );
+  };
 
   // No scroll logic needed for vh100 page
 
@@ -188,20 +211,36 @@ export default function Hero() {
           </div>
 
           {/* Actions - Using Magnetic Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center overflow-hidden pt-2 md:pt-4 w-full px-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center overflow-hidden pt-2 md:pt-4 w-full px-6">
             <motion.div variants={revealVariant} className="z-20 relative">
               <MagneticButton
-                onClick={() => setShowModal(true)}
+                href={preferredDownload.href}
+                onClick={() => emitDownloadIntent('hero-primary-quick-download')}
                 className="!inline-flex items-center justify-center px-10 py-5 bg-foreground text-background font-bold rounded-full hover:bg-foreground/90 transition-colors shadow-xl hover:shadow-2xl uppercase tracking-wide text-sm gap-3"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
                 </svg>
-                {content.hero.ctaPrimary}
+                Download CV now
               </MagneticButton>
             </motion.div>
 
             <motion.div variants={revealVariant} className="z-20 relative">
+              <MagneticButton
+                onClick={() => {
+                  setShowModal(true);
+                  emitDownloadIntent('hero-open-format-modal');
+                }}
+                className="!inline-flex items-center justify-center px-10 py-5 border border-foreground/20 text-foreground font-semibold rounded-full hover:bg-foreground/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm gap-3"
+              >
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                All formats
+              </MagneticButton>
+            </motion.div>
+
+            <motion.div variants={revealVariant} className="z-20 relative hidden sm:block">
               <MagneticButton
                 href={content.hero.ctaSecondaryUrl}
                 className="!inline-flex items-center justify-center px-10 py-5 border border-foreground/20 text-foreground font-semibold rounded-full hover:bg-foreground/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm gap-3"
@@ -212,6 +251,22 @@ export default function Hero() {
                 {content.hero.ctaSecondary}
               </MagneticButton>
             </motion.div>
+          </div>
+
+          <div className="overflow-hidden mt-4 w-full flex justify-center px-6">
+            <motion.p variants={revealVariant} className="text-xs md:text-sm text-text-muted text-center">
+              Fast track: <span className="text-foreground/90">{preferredDownload.label}</span> ·
+              <button
+                type="button"
+                onClick={() => {
+                  setShowModal(true);
+                  emitDownloadIntent('hero-inline-format-selector');
+                }}
+                className="ml-1 underline decoration-foreground/35 underline-offset-4 hover:decoration-foreground hover:text-foreground transition-colors"
+              >
+                choose another version
+              </button>
+            </motion.p>
           </div>
 
           {/* Social Links */}
@@ -233,6 +288,33 @@ export default function Hero() {
           </div>
         </motion.div>
       </motion.div>
+
+      {/* Sticky mobile conversion bar */}
+      <div className="sm:hidden fixed bottom-4 left-4 right-4 z-[10010]">
+        <div className="theme-toggle-surface rounded-2xl p-2 flex items-center gap-2">
+          <a
+            href={preferredDownload.href}
+            onClick={() => emitDownloadIntent('mobile-sticky-quick-download')}
+            className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-foreground text-background text-xs font-semibold uppercase tracking-[0.12em]"
+          >
+            <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+            Download CV
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              setShowModal(true);
+              emitDownloadIntent('mobile-sticky-open-formats');
+            }}
+            className="px-3 py-3 rounded-xl border border-foreground/20 text-foreground text-[11px] font-semibold uppercase tracking-[0.12em]"
+            aria-label="Open all CV formats"
+          >
+            Formats
+          </button>
+        </div>
+      </div>
 
       {/* Download Modal */}
       <DownloadModal isOpen={showModal} onClose={() => setShowModal(false)} />
