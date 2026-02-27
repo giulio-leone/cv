@@ -8,7 +8,23 @@ export default function CustomCursor() {
 
     useEffect(() => {
         setMounted(true);
-        setHasFinePointer(!window.matchMedia('(pointer: coarse)').matches);
+
+        const coarsePointerQuery = window.matchMedia('(pointer: coarse)');
+        const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+        const syncPointerSupport = () => {
+            setHasFinePointer(!coarsePointerQuery.matches && !reducedMotionQuery.matches);
+        };
+
+        syncPointerSupport();
+
+        coarsePointerQuery.addEventListener('change', syncPointerSupport);
+        reducedMotionQuery.addEventListener('change', syncPointerSupport);
+
+        return () => {
+            coarsePointerQuery.removeEventListener('change', syncPointerSupport);
+            reducedMotionQuery.removeEventListener('change', syncPointerSupport);
+        };
     }, []);
 
     useEffect(() => {
