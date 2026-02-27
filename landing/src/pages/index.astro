@@ -1,18 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import ParticleNetwork from '../components/ParticleNetwork'
 import Hero from '../components/Hero'
-import CertificationsMarquee from '../components/CertificationsMarquee'
 ---
 
 <Layout>
-  <ParticleNetwork client:only="react" />
   <main class="relative z-10 h-[100dvh] w-full flex flex-col overflow-hidden">
     <div class="flex-1 w-full flex items-center justify-center relative">
       <Hero client:load />
-    </div>
-    <div class="shrink-0 w-full">
-      <CertificationsMarquee client:visible speed={35} />
     </div>
   </main>
 </Layout>

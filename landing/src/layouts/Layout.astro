@@ -2,9 +2,10 @@
 import '../styles/global.css'
 import CustomCursor from '../components/CustomCursor'
 import AuroraBackground from '../components/AuroraBackground'
+import content from '../data/content.json'
 
 interface Props { title?: string }
-const { title = 'Giulio Leone — Senior AI Engineer' } = Astro.props
+const { title = content.meta.siteTitle } = Astro.props
 const base = import.meta.env.BASE_URL
 ---
 <!DOCTYPE html>
@@ -13,9 +14,9 @@ const base = import.meta.env.BASE_URL
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{title}</title>
-  <meta name="description" content="Senior AI Engineer specializing in RAG, Agentic AI, and LLM Systems. 7+ years, 66+ certifications. Open to UAE." />
-  <meta property="og:title" content="Giulio Leone — Senior AI Engineer" />
-  <meta property="og:description" content="RAG · Agentic AI · LLM Systems · 66+ Certifications · Open to UAE" />
+  <meta name="description" content={content.meta.siteDescription} />
+  <meta property="og:title" content={content.meta.ogTitle} />
+  <meta property="og:description" content={content.meta.ogDescription} />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://giulio-leone.github.io/cv/" />
   
@@ -26,7 +27,7 @@ const base = import.meta.env.BASE_URL
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
-<body class="overflow-x-hidden relative bg-background">
+<body class="overflow-hidden relative bg-background h-[100dvh] w-full">
   {/* Global Preloader for true Awwwards feel - Vanilla JS to avoid React Hydration FOUC */}
   <div id="global-preloader" class="fixed inset-0 z-[99999] bg-background flex flex-col items-center justify-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.76,0,0.24,1)]">
     <div class="overflow-hidden">
@@ -48,27 +49,6 @@ const base = import.meta.env.BASE_URL
   <slot />
 
   <script>
-    import Lenis from 'lenis';
-
-    // Lenis Setup
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true,
-      wheelMultiplier: 1,
-      touchMultiplier: 2,
-      infinite: false,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-
-    requestAnimationFrame(raf);
-
     // Preloader Logic
     document.addEventListener("DOMContentLoaded", () => {
       const preloader = document.getElementById('global-preloader');

@@ -1,43 +1,51 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef } from 'react';
 
 export default function CustomCursor() {
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-    const [isHovering, setIsHovering] = useState(false);
-    const [hoverType, setHoverType] = useState<'link' | 'card' | null>(null);
+    const dotRef = useRef<HTMLDivElement>(null);
+    const ringRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         if (window.matchMedia('(pointer: coarse)').matches) return;
 
-        const updateMousePosition = (e: MouseEvent) => {
-            setMousePosition({ x: e.clientX, y: e.clientY });
+        const dot = dotRef.current;
+        const ring = ringRef.current;
+        if (!dot || !ring) return;
+
+        let dotScale = 1;
+        let ringScale = 1;
+        let ringOpacity = 1;
+
+        const onMouseMove = (e: MouseEvent) => {
+            dot.style.transform = `translate3d(${e.clientX - 8}px, ${e.clientY - 8}px, 0) scale(${dotScale})`;
+            ring.style.transform = `translate3d(${e.clientX - 16}px, ${e.clientY - 16}px, 0) scale(${ringScale})`;
         };
 
-        const handleMouseOver = (e: MouseEvent) => {
+        const onMouseOver = (e: MouseEvent) => {
             const target = e.target as HTMLElement;
-
-            const linkOrButton = target.closest('a') || target.closest('button');
-            const isMagnetic = target.classList?.contains('magnetic') || target.closest('.magnetic');
+            const isLink = target.closest('a') || target.closest('button') || target.closest('.magnetic');
             const isCard = target.closest('.glass-panel');
 
-            if (linkOrButton || isMagnetic) {
-                setIsHovering(true);
-                setHoverType('link');
+            if (isLink) {
+                dotScale = 4.5;
+                ringScale = 1;
+                ringOpacity = 0;
             } else if (isCard) {
-                setIsHovering(true);
-                setHoverType('card');
+                dotScale = 1.5;
+                ringScale = 1.5;
+                ringOpacity = 0.5;
             } else {
-                setIsHovering(false);
-                setHoverType(null);
+                dotScale = 1;
+                ringScale = 1;
+                ringOpacity = 1;
             }
+            ring.style.opacity = String(ringOpacity);
         };
 
-        window.addEventListener('mousemove', updateMousePosition);
-        window.addEventListener('mouseover', handleMouseOver);
-
+        window.addEventListener('mousemove', onMouseMove, { passive: true });
+        window.addEventListener('mouseover', onMouseOver, { passive: true });
         return () => {
-            window.removeEventListener('mousemove', updateMousePosition);
-            window.removeEventListener('mouseover', handleMouseOver);
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('mouseover', onMouseOver);
         };
     }, []);
 
@@ -45,51 +53,17 @@ export default function CustomCursor() {
         return null;
     }
 
-    let dotScale = 1;
-    let ringScale = 1;
-    let ringOpacity = 1;
-
-    if (isHovering) {
-        if (hoverType === 'link') {
-            dotScale = 4.5;
-            ringOpacity = 0;
-        } else if (hoverType === 'card') {
-            dotScale = 1.5;
-            ringScale = 1.5;
-            ringOpacity = 0.5;
-        }
-    }
-
     return (
         <>
-            <motion.div
+            <div
+                ref={dotRef}
                 className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[100] mix-blend-difference hidden sm:block"
-                animate={{
-                    x: mousePosition.x - 8,
-                    y: mousePosition.y - 8,
-                    scale: dotScale,
-                }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 150,
-                    damping: 15,
-                    mass: 0.1,
-                }}
+                style={{ willChange: 'transform' }}
             />
-            <motion.div
+            <div
+                ref={ringRef}
                 className="fixed top-0 left-0 w-8 h-8 rounded-full border border-white/30 pointer-events-none z-[99] mix-blend-difference hidden sm:block"
-                animate={{
-                    x: mousePosition.x - 16,
-                    y: mousePosition.y - 16,
-                    scale: ringScale,
-                    opacity: ringOpacity,
-                }}
-                transition={{
-                    type: 'spring',
-                    stiffness: 100,
-                    damping: 25,
-                    mass: 0.5,
-                }}
+                style={{ willChange: 'transform, opacity', transition: 'opacity 0.3s ease' }}
             />
         </>
     );

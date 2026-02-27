@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "tagline": "Transforming Ideas into Intelligent Systems",
+    "name": "Giulio Leone.",
+    "title": "Senior AI Engineer",
+    "specializations": ["GenAI", "RAG", "LLM Systems"],
+    "description": "7+ years bridging the gap between cutting-edge artificial intelligence and robust, scalable full-stack applications.",
+    "ctaPrimary": "Download Résumé",
+    "ctaSecondary": "Let's Talk",
+    "ctaSecondaryUrl": "https://wa.me/393661410914"
+  },
+  "meta": {
+    "siteTitle": "Giulio Leone — Senior AI Engineer",
+    "siteDescription": "Senior AI Engineer specializing in RAG, Agentic AI, and LLM Systems. 7+ years, 66+ certifications. Open to UAE.",
+    "ogTitle": "Giulio Leone — Senior AI Engineer",
+    "ogDescription": "RAG · Agentic AI · LLM Systems · 66+ Certifications · Open to UAE"
+  },
+  "links": [
+    { "label": "LinkedIn", "href": "https://www.linkedin.com/in/giulioleone1/", "type": "linkedin" },
+    { "label": "GitHub", "href": "https://github.com/giulio-leone/cv", "type": "github" },
+    { "label": "WhatsApp", "href": "https://wa.me/393661410914", "type": "whatsapp" },
+    { "label": "Email", "href": "mailto:giulioleone097@gmail.com", "type": "email" },
+    { "label": "Website", "href": "https://www.giulioleone.com", "type": "website" }
+  ],
+  "certifications": {
+    "total": 66,
+    "viewAllUrl": "https://www.linkedin.com/in/giulioleone1/details/certifications/",
+    "viewAllLabel": "Certifications",
+    "featured": [
+      { "name": "AWS GenAI Pro", "issuer": "Amazon Web Services", "color": "#FF9900", "logo": "M6.763 10.036c0 .296.032.535.088.71.064.176.144.368.256.576.04.064.056.128.056.176 0 .08-.048.16-.152.24l-.503.335a.383.383 0 01-.208.072c-.08 0-.16-.04-.239-.112a2.47 2.47 0 01-.287-.374 6.18 6.18 0 01-.248-.47c-.622.734-1.405 1.101-2.347 1.101-.67 0-1.205-.191-1.596-.574-.391-.384-.59-.894-.59-1.533 0-.678.239-1.23.726-1.644.487-.415 1.133-.623 1.955-.623.272 0 .551.024.846.064.296.04.6.104.918.176v-.583c0-.607-.127-1.03-.375-1.277-.255-.248-.686-.367-1.3-.367-.28 0-.568.032-.863.104a4.84 4.84 0 011.246-.152c.95 0 1.644.216 2.091.647.44.43.662 1.085.662 1.963v2.586z M21.725 16.906C19.31 18.694 15.74 19.637 12.68 19.637c-4.218 0-8.015-1.558-10.886-4.155-.224-.2-.024-.48.248-.32C5.08 17.2 8.79 18.23 12.66 18.23a22.96 22.96 0 007.71-1.726c.383-.168.703.248.355.4z" },
+      { "name": "Azure AI Engineer", "issuer": "Microsoft", "color": "#0078D4", "logo": "M5.483 21.3H14.2L8.535 9.596l6.048-7.587L3.782 18.406l1.7 2.894zm.798-1.296L13.65 4.38l3.89 8.257-5.7 3.78H6.28zm4.417-7.62l4.917 8.925H22.2L10.698 12.384z" },
+      { "name": "Oracle OCI GenAI", "issuer": "Oracle", "color": "#F80000", "logo": "M8.8 16.4H15.2c2.43 0 4.4-1.97 4.4-4.4 0-2.43-1.97-4.4-4.4-4.4H8.8c-2.43 0-4.4 1.97-4.4 4.4 0 2.43 1.97 4.4 4.4 4.4zm-.04-6.81h6.48c1.33 0 2.41 1.08 2.41 2.41 0 1.33-1.08 2.41-2.41 2.41H8.76c-1.33 0-2.41-1.08-2.41-2.41 0-1.33 1.08-2.41 2.41-2.41z" },
+      { "name": "IBM Data Science", "issuer": "IBM", "color": "#0530AD", "logo": "M0 7h8v2H0zm10 0h8v2h-8zm0 4h8v2h-8zM0 11h8v2H0zm0 4h8v2H0zm10 0h8v2h-8z" },
+      { "name": "MongoDB Dev", "issuer": "MongoDB", "color": "#13AA52", "logo": "M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" },
+      { "name": "Google Cybersecurity", "issuer": "Google", "color": "#4285F4", "logo": "M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z" },
+      { "name": "Meta Back-End", "issuer": "Meta", "color": "#0668E1", "logo": "M6.915 4.03c-1.968 0-3.683 1.28-4.871 3.113C.704 9.208 0 11.883 0 14.449c0 .706.07 1.369.21 1.973a4.892 4.892 0 001.12 2.15c.554.586 1.3.928 2.191.928.996 0 1.863-.482 2.638-1.338.775-.855 1.46-2.083 2.088-3.646l.082-.204c.253-.634.493-1.23.72-1.758.585-1.364 1.21-2.34 1.875-2.878.329-.266.67-.44 1.076-.44.406 0 .747.174 1.076.44.665.538 1.29 1.514 1.875 2.878.227.527.467 1.124.72 1.758l.082.204c.628 1.563 1.313 2.79 2.088 3.646.775.856 1.642 1.338 2.638 1.338.891 0 1.637-.342 2.19-.928.46-.486.82-1.146 1.068-1.912.178-.549.263-1.162.263-1.822V14.449c0-2.566-.704-5.24-2.044-7.303C20.768 5.31 19.053 4.03 17.085 4.03c-1.263 0-2.335.485-3.237 1.31-.803.735-1.477 1.748-2.054 2.916l-.119.256-.12-.256c-.576-1.168-1.25-2.18-2.053-2.916-.902-.825-1.974-1.31-3.237-1.31z" },
+      { "name": "Oracle AI Vector", "issuer": "Oracle", "color": "#F80000", "logo": "M8.8 16.4H15.2c2.43 0 4.4-1.97 4.4-4.4 0-2.43-1.97-4.4-4.4-4.4H8.8c-2.43 0-4.4 1.97-4.4 4.4 0 2.43 1.97 4.4 4.4 4.4zm-.04-6.81h6.48c1.33 0 2.41 1.08 2.41 2.41 0 1.33-1.08 2.41-2.41 2.41H8.76c-1.33 0-2.41-1.08-2.41-2.41 0-1.33 1.08-2.41 2.41-2.41z" }
+    ]
+  },
+  "downloads": [
+    { "label": "English — Full (Recommended)", "filename": "giulio-leone-cv-en.pdf", "badge": "Recommended" },
+    { "label": "English — One Page", "filename": "giulio-leone-cv-en-onepage.pdf", "badge": null },
+    { "label": "Italiano — Completo", "filename": "giulio-leone-cv-it.pdf", "badge": null },
+    { "label": "Italiano — Una Pagina", "filename": "giulio-leone-cv-it-onepage.pdf", "badge": null }
+  ]
+}
