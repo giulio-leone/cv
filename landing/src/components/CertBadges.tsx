@@ -1,17 +1,24 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import content from '../data/content.json';
+import CertModal from './CertModal';
 
 interface CertData {
   name: string;
   issuer: string;
   color: string;
   logo: string;
+  fullTitle?: string;
+  issueDate?: string;
+  expiryDate?: string;
+  credentialId?: string;
+  credentialUrl?: string;
+  skills?: string[];
 }
 
 const certs: CertData[] = content.certifications.featured;
 
-function CertCard({ cert, index }: { cert: CertData; index: number }) {
+function CertCard({ cert, index, onClick }: { cert: CertData; index: number; onClick: () => void }) {
   return (
     <motion.div
       className="group relative"
@@ -20,8 +27,10 @@ function CertCard({ cert, index }: { cert: CertData; index: number }) {
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
       whileHover={{ scale: 1.04, y: -3 }}
     >
-      <div
-        className="relative flex flex-col items-center gap-2.5 px-4 py-4 md:px-5 md:py-5 rounded-2xl border border-foreground/8 bg-foreground/[0.03] overflow-hidden transition-all duration-300 min-w-[100px] md:min-w-[120px] hover:border-foreground/14 hover:bg-foreground/[0.06]"
+      <button
+        type="button"
+        onClick={onClick}
+        className="relative flex flex-col items-center gap-2.5 px-4 py-4 md:px-5 md:py-5 rounded-2xl border border-foreground/8 bg-foreground/[0.03] overflow-hidden transition-all duration-300 min-w-[100px] md:min-w-[120px] hover:border-foreground/14 hover:bg-foreground/[0.06] cursor-pointer w-full"
       >
         {/* Logo */}
         <div className="relative z-10 w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-xl bg-foreground/[0.06] transition-colors duration-300 group-hover:bg-foreground/[0.10] will-change-transform">
@@ -34,7 +43,7 @@ function CertCard({ cert, index }: { cert: CertData; index: number }) {
         <span className="relative z-10 text-[11px] md:text-xs font-semibold text-foreground/80 group-hover:text-foreground transition-colors text-center leading-tight">
           {cert.name}
         </span>
-      </div>
+      </button>
     </motion.div>
   );
 }
@@ -45,12 +54,13 @@ interface CertBadgesProps {
 
 export default function CertBadges({ isVisible }: CertBadgesProps) {
   const [count, setCount] = useState(0);
+  const [selectedCert, setSelectedCert] = useState<CertData | null>(null);
 
   useEffect(() => {
     if (!isVisible) return;
     let current = 0;
     const target = content.certifications.total;
-    let raf: number;
+    let raf: number | undefined;
     const timeout = setTimeout(() => {
       const step = () => {
         current += 2;
@@ -75,7 +85,7 @@ export default function CertBadges({ isVisible }: CertBadgesProps) {
     <div className="w-full max-w-4xl mx-auto px-4">
       <div className="flex flex-wrap gap-2.5 md:gap-3 justify-center mb-4">
         {certs.map((cert, i) => (
-          <CertCard key={cert.name} cert={cert} index={i} />
+          <CertCard key={cert.name} cert={cert} index={i} onClick={() => setSelectedCert(cert)} />
         ))}
       </div>
       <motion.div
@@ -103,6 +113,7 @@ export default function CertBadges({ isVisible }: CertBadgesProps) {
           </svg>
         </a>
       </motion.div>
+      <CertModal cert={selectedCert} onClose={() => setSelectedCert(null)} />
     </div>
   );
 }
