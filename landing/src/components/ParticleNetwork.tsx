@@ -4,6 +4,9 @@ export default function ParticleNetwork() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (mq.matches) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
@@ -13,56 +16,70 @@ export default function ParticleNetwork() {
     let particles: { x: number; y: number; vx: number; vy: number; r: number }[] = [];
     const mouse = { x: -1000, y: -1000 };
 
+    const getColor = () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      return {
+        particle: isDark ? 'rgba(255,255,255,' : 'rgba(15,17,23,',
+        line: isDark ? 'rgba(255,255,255,' : 'rgba(15,17,23,',
+      };
+    };
+
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio, 2);
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+      ctx.scale(dpr, dpr);
     };
 
     const init = () => {
       resize();
-      const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
+      const area = window.innerWidth * window.innerHeight;
+      const count = Math.min(Math.floor(area / 25000), 50);
       particles = Array.from({ length: count }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.4,
-        vy: (Math.random() - 0.5) * 0.4,
-        r: Math.random() * 1.5 + 0.5,
+        x: Math.random() * window.innerWidth,
+        y: Math.random() * window.innerHeight,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        r: Math.random() * 1.2 + 0.4,
       }));
     };
 
     const draw = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      ctx.clearRect(0, 0, w, h);
+      const colors = getColor();
+      const maxDist = 180;
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
         p.y += p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
 
-        // Draw particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(14, 165, 233, 0.5)';
+        ctx.fillStyle = `${colors.particle}0.18)`;
         ctx.fill();
 
-        // Connect nearby particles
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const dx = p.x - p2.x;
           const dy = p.y - p2.y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 150) {
+          if (dist < maxDist) {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(14, 165, 233, ${0.08 * (1 - dist / 150)})`;
+            ctx.strokeStyle = `${colors.line}${(0.06 * (1 - dist / maxDist)).toFixed(3)})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }
         }
 
-        // Mouse interaction
         const mdx = p.x - mouse.x;
         const mdy = p.y - mouse.y;
         const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -70,8 +87,8 @@ export default function ParticleNetwork() {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
           ctx.lineTo(mouse.x, mouse.y);
-          ctx.strokeStyle = `rgba(99, 102, 241, ${0.15 * (1 - mDist / 200)})`;
-          ctx.lineWidth = 0.8;
+          ctx.strokeStyle = `${colors.line}${(0.10 * (1 - mDist / 200)).toFixed(3)})`;
+          ctx.lineWidth = 0.6;
           ctx.stroke();
         }
       }
@@ -100,7 +117,7 @@ export default function ParticleNetwork() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 z-0 pointer-events-none"
-      style={{ background: 'transparent' }}
+      aria-hidden="true"
     />
   );
 }
