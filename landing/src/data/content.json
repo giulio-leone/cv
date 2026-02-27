@@ -38,9 +38,9 @@
     ]
   },
   "downloads": [
-    { "label": "English — Full (Recommended)", "filename": "giulio-leone-cv-en.pdf", "badge": "Recommended" },
-    { "label": "English — One Page", "filename": "giulio-leone-cv-en-onepage.pdf", "badge": null },
-    { "label": "Italiano — Completo", "filename": "giulio-leone-cv-it.pdf", "badge": null },
-    { "label": "Italiano — Una Pagina", "filename": "giulio-leone-cv-it-onepage.pdf", "badge": null }
+    { "label": "English — Full (Recommended)", "filename": "cv-en.pdf", "badge": "Recommended" },
+    { "label": "English — One Page", "filename": "cv-en-onepage.pdf", "badge": null },
+    { "label": "Italiano — Completo", "filename": "cv-it.pdf", "badge": null },
+    { "label": "Italiano — Una Pagina", "filename": "cv-it-onepage.pdf", "badge": null }
   ]
 }
