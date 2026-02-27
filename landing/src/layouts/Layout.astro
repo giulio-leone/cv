@@ -104,6 +104,17 @@ const preferredDownloadHref = `${downloadBase}/${preferredDownload.filename}`
       };
 
       window.addEventListener('pagehide', cleanup, { once: true });
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (prefersReducedMotion) {
+        counter.innerText = '100';
+        preloader.style.transform = 'translateY(-100%)';
+        window.preloaderDone = true;
+        window.dispatchEvent(new CustomEvent('preloaderComplete'));
+        cleanup();
+        return;
+      }
       
       // Initial Reveal of counter
       revealTimeout = window.setTimeout(() => {

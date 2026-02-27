@@ -1,4 +1,4 @@
-import { motion, useMotionValue, useSpring, useAnimation, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useAnimation, useTransform, useReducedMotion } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
 import MagneticButton from './MagneticButton';
 import AnimatedLink from './AnimatedLink';
@@ -50,6 +50,7 @@ export default function Hero() {
   const controls = useAnimation();
   const [showModal, setShowModal] = useState(false);
   const [animationsStarted, setAnimationsStarted] = useState(false);
+  const prefersReducedMotion = useReducedMotion();
 
   const emitDownloadIntent = (source: string) => {
     if (typeof window === 'undefined') return;
@@ -87,13 +88,41 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX / window.innerWidth - 0.5);
-      mouseY.set(e.clientY / window.innerHeight - 0.5);
+    if (!isDesktop || prefersReducedMotion) {
+      mouseX.set(0);
+      mouseY.set(0);
+      return;
+    }
+
+    let rafId = 0;
+    let latestX = 0;
+    let latestY = 0;
+
+    const update = () => {
+      mouseX.set(latestX / window.innerWidth - 0.5);
+      mouseY.set(latestY / window.innerHeight - 0.5);
+      rafId = 0;
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+
+    const handleMouseMove = (e: MouseEvent) => {
+      latestX = e.clientX;
+      latestY = e.clientY;
+
+      if (!rafId) {
+        rafId = requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+    return () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isDesktop, prefersReducedMotion, mouseX, mouseY]);
 
   useEffect(() => {
     const startAnimations = () => {
@@ -120,12 +149,11 @@ export default function Hero() {
 
   // Cinematic reveal animation variant
   const revealVariant = {
-    hidden: { y: '120%', rotate: 2 },
+    hidden: prefersReducedMotion ? { opacity: 0 } : { y: '120%', rotate: 2 },
     visible: {
-      y: 0,
-      rotate: 0,
+      ...(prefersReducedMotion ? { opacity: 1 } : { y: 0, rotate: 0 }),
       transition: {
-        duration: 1.2,
+        duration: prefersReducedMotion ? 0.2 : 1.2,
         ease: EASE_OUT_QUART,
       }
     }
@@ -135,9 +163,9 @@ export default function Hero() {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: prefersReducedMotion ? 0 : 0.1,
         // Wait just a tiny bit after preloader before starting text
-        delayChildren: 0.1,
+        delayChildren: prefersReducedMotion ? 0 : 0.1,
       }
     }
   };
@@ -158,7 +186,7 @@ export default function Hero() {
     >
       <motion.div
         style={{
-          ...(isDesktop ? { rotateX: springRotateX, rotateY: springRotateY } : {})
+          ...(isDesktop && !prefersReducedMotion ? { rotateX: springRotateX, rotateY: springRotateY } : {})
         }}
         className="text-center z-10 max-w-5xl mx-auto transform-style-3d relative w-full"
       >
