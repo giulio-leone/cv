@@ -52,7 +52,7 @@ function CertCard({ cert, index }: { cert: CertData; index: number }) {
         </div>
 
         {/* Cert Name */}
-        <span className="relative z-10 text-[11px] md:text-xs font-bold text-white transition-colors text-center leading-tight">
+        <span className="relative z-10 text-[11px] md:text-xs font-bold text-foreground transition-colors text-center leading-tight">
           {cert.name}
         </span>
       </div>
@@ -109,9 +109,9 @@ export default function CertBadges({ isVisible }: CertBadgesProps) {
           href={content.certifications.viewAllUrl}
           target="_blank"
           rel="noopener"
-          className="group inline-flex items-center gap-2 text-xs text-white/40 hover:text-white/80 transition-all duration-300 uppercase tracking-widest font-medium"
+          className="group inline-flex items-center gap-2 text-xs text-text-muted hover:text-foreground/80 transition-all duration-300 uppercase tracking-widest font-medium"
         >
-          <span className="font-mono text-white/60 group-hover:text-white transition-colors">{count}+</span>
+          <span className="font-mono text-foreground/70 group-hover:text-foreground transition-colors">{count}+</span>
           {content.certifications.viewAllLabel}
           <svg
             className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300"

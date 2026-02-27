@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import AnimatedLink from './AnimatedLink';
+import { EASE_OUT_QUART } from '../lib/motion';
 
 const links = [
   {
@@ -60,7 +61,7 @@ export default function Contact() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          transition={{ duration: 0.8, ease: EASE_OUT_QUART }}
           className="text-4xl md:text-5xl font-extrabold text-gradient lowercase tracking-tight mb-4"
         >
           contact.
@@ -78,7 +79,7 @@ export default function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          transition={{ delay: 0.6, duration: 0.8, ease: EASE_OUT_QUART }}
           className="flex flex-wrap justify-center gap-4"
         >
           {links.map((l) => (

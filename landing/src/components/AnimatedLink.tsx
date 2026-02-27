@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 interface AnimatedLinkProps {
     href: string;
@@ -15,6 +15,7 @@ export default function AnimatedLink({ href, target, rel, children, className = 
 
     const DURATION = 0.25;
     const STAGGER = 0.02;
+    const chars = useMemo(() => children.split(''), [children]);
 
     return (
         <a
@@ -33,7 +34,7 @@ export default function AnimatedLink({ href, target, rel, children, className = 
             <div className="relative overflow-hidden inline-[flex]">
                 {/* Top Text (moves up) */}
                 <div className="flex">
-                    {children.split('').map((char, i) => (
+                    {chars.map((char, i) => (
                         <motion.span
                             key={`top-${i}`}
                             className="inline-block whitespace-pre"
@@ -51,10 +52,10 @@ export default function AnimatedLink({ href, target, rel, children, className = 
 
                 {/* Bottom Text (moves in from bottom) */}
                 <div className="absolute inset-0 flex" aria-hidden="true">
-                    {children.split('').map((char, i) => (
+                    {chars.map((char, i) => (
                         <motion.span
                             key={`bottom-${i}`}
-                            className="inline-block whitespace-pre text-white"
+                            className="inline-block whitespace-pre text-foreground"
                             initial={{ y: '100%' }}
                             animate={{ y: isHovered ? '0%' : '100%' }}
                             transition={{

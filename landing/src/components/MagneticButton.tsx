@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 interface MagneticButtonProps {
@@ -9,12 +9,11 @@ interface MagneticButtonProps {
 }
 
 export default function MagneticButton({ children, className = '', href, onClick }: MagneticButtonProps) {
-    const ref = useRef<HTMLElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
     const handleMouse = (e: React.MouseEvent<HTMLElement>) => {
         const { clientX, clientY } = e;
-        const { height, width, left, top } = ref.current!.getBoundingClientRect();
+        const { height, width, left, top } = e.currentTarget.getBoundingClientRect();
         const middleX = clientX - (left + width / 2);
         const middleY = clientY - (top + height / 2);
         setPosition({ x: middleX * 0.2, y: middleY * 0.2 });
@@ -25,11 +24,10 @@ export default function MagneticButton({ children, className = '', href, onClick
     };
 
     const commonProps = {
-        ref: ref as any,
         onMouseMove: handleMouse,
         onMouseLeave: reset,
         animate: { x: position.x, y: position.y },
-        transition: { type: 'spring' as any, stiffness: 150, damping: 15, mass: 0.1 },
+        transition: { type: 'spring' as const, stiffness: 150, damping: 15, mass: 0.1 },
         onClick: onClick,
         className: `relative flex items-center justify-center magnetic inline-block outline-none ${className}`
     };
@@ -43,7 +41,7 @@ export default function MagneticButton({ children, className = '', href, onClick
     }
 
     return (
-        <motion.button {...commonProps}>
+        <motion.button type="button" {...commonProps}>
             {children}
         </motion.button>
     );

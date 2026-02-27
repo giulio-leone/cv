@@ -1,24 +1,30 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
-interface SpotlightCardProps extends React.HTMLAttributes<HTMLElement> {
+interface SpotlightCardBaseProps {
     children: React.ReactNode;
     className?: string;
-    as?: any; // To support 'a', 'div', etc.
-    href?: string;
 }
 
-export default function SpotlightCard({ children, className = "", as: Component = "div", ...rest }: SpotlightCardProps) {
-    const divRef = useRef<HTMLElement>(null);
+type SpotlightDivProps = SpotlightCardBaseProps & Omit<React.HTMLAttributes<HTMLDivElement>, 'children' | 'className'> & {
+    as?: 'div';
+};
+
+type SpotlightAnchorProps = SpotlightCardBaseProps & Omit<React.AnchorHTMLAttributes<HTMLAnchorElement>, 'children' | 'className'> & {
+    as: 'a';
+};
+
+type SpotlightCardProps = SpotlightDivProps | SpotlightAnchorProps;
+
+export default function SpotlightCard(props: SpotlightCardProps) {
+    const { children, className = '' } = props;
     const [isFocused, setIsFocused] = useState(false);
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [opacity, setOpacity] = useState(0);
 
     const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-        if (!divRef.current || isFocused) return;
+        if (isFocused) return;
 
-        const div = divRef.current;
-        const rect = div.getBoundingClientRect();
-
+        const rect = e.currentTarget.getBoundingClientRect();
         setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
     };
 
@@ -40,17 +46,10 @@ export default function SpotlightCard({ children, className = "", as: Component 
         setOpacity(0);
     };
 
-    return (
-        <Component
-            ref={divRef as any}
-            onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={`relative overflow-hidden rounded-2xl glass-panel border border-glass-border bg-white/[0.02] shadow-2xl transition-all duration-500 hover:border-white/20 hover:bg-white/[0.04] ${className}`}
-            {...rest}
-        >
+    const baseClass = `relative overflow-hidden rounded-2xl glass-panel border border-glass-border bg-white/[0.02] shadow-2xl transition-all duration-500 hover:border-white/20 hover:bg-white/[0.04] ${className}`;
+
+    const content = (
+        <>
             <div
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-300"
                 style={{
@@ -60,13 +59,42 @@ export default function SpotlightCard({ children, className = "", as: Component 
             />
 
             {/* Glow border overlay */}
-            <div
-                className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10 z-10"
-            />
+            <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-black/10 z-10" />
 
-            <div className="relative z-20 h-full">
-                {children}
-            </div>
-        </Component>
+            <div className="relative z-20 h-full">{children}</div>
+        </>
+    );
+
+    if (props.as === 'a') {
+        const { as: _as, ...rest } = props;
+        return (
+            <a
+                {...rest}
+                onMouseMove={handleMouseMove}
+                onFocus={handleFocus}
+                onBlur={handleBlur}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={baseClass}
+            >
+                {content}
+            </a>
+        );
+    }
+
+    const { as: _as, ...rest } = props;
+
+    return (
+        <div
+            {...rest}
+            onMouseMove={handleMouseMove}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={baseClass}
+        >
+            {content}
+        </div>
     );
 }

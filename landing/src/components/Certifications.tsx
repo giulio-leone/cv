@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import SpotlightCard from './SpotlightCard';
+import { EASE_OUT_QUART } from '../lib/motion';
 
 const topCerts = [
   {
@@ -75,7 +76,7 @@ export default function Certifications() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          transition={{ duration: 0.8, ease: EASE_OUT_QUART }}
           className="text-4xl md:text-5xl font-extrabold text-center text-gradient lowercase tracking-tight mb-4"
         >
           certifications.
@@ -97,7 +98,7 @@ export default function Certifications() {
               key={cat.name}
               initial={{ opacity: 0, x: -20 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ delay: 0.3 + i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] as any }}
+              transition={{ delay: 0.3 + i * 0.08, duration: 0.6, ease: EASE_OUT_QUART }}
               className="group transition-all duration-500 h-full"
             >
               <SpotlightCard className="flex items-center gap-4 p-4 h-full">
@@ -114,7 +115,7 @@ export default function Certifications() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          transition={{ delay: 0.6, duration: 0.8, ease: EASE_OUT_QUART }}
           className="flex flex-wrap justify-center gap-3"
         >
           {topCerts.map((cert) => (
