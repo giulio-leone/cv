@@ -200,7 +200,7 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full h-full flex flex-col items-center justify-center p-4 md:p-8 overflow-hidden perspective-1000"
+      className="relative w-full min-h-[100dvh] flex flex-col items-center justify-center p-4 md:p-8 overflow-x-hidden perspective-1000"
     >
       <motion.div
         style={{
