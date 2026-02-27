@@ -4,12 +4,14 @@ import content from '../data/content.json';
 
 const BASE = 'https://github.com/giulio-leone/cv/raw/main/output';
 
-const downloads = content.downloads.map((d) => ({
-  label: d.label,
-  href: `${BASE}/${d.filename}`,
-  recommended: !!d.badge,
-  badge: typeof d.badge === 'string' ? d.badge.trim() : '',
-}));
+const downloads = content.downloads
+  .map((d) => ({
+    label: d.label,
+    href: `${BASE}/${d.filename}`,
+    recommended: !!d.badge,
+    badge: typeof d.badge === 'string' ? d.badge.trim() : '',
+  }))
+  .sort((a, b) => Number(b.recommended) - Number(a.recommended));
 
 interface DownloadModalProps {
   isOpen: boolean;
@@ -120,6 +122,7 @@ export default function DownloadModal({ isOpen, onClose }: DownloadModalProps) {
                     key={d.label}
                     href={d.href}
                     download
+                    onClick={() => onClose()}
                     className={`group flex items-center justify-between p-4 rounded-xl border transition-all duration-300 ${
                       d.recommended
                         ? 'border-foreground/25 bg-foreground/8 hover:bg-foreground/12 hover:border-foreground/35'

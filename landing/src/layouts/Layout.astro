@@ -7,6 +7,9 @@ import content from '../data/content.json'
 
 interface Props { title?: string }
 const { title = content.meta.siteTitle } = Astro.props
+const downloadBase = 'https://github.com/giulio-leone/cv/raw/main/output'
+const preferredDownload = content.downloads.find((item) => item.badge) ?? content.downloads[0]
+const preferredDownloadHref = `${downloadBase}/${preferredDownload.filename}`
 ---
 <!DOCTYPE html>
 <html lang="en" data-theme="dark" data-theme-mode="auto">
@@ -51,6 +54,11 @@ const { title = content.meta.siteTitle } = Astro.props
   
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://github.com" />
+  <link rel="dns-prefetch" href="//github.com" />
+  <link rel="preconnect" href="https://raw.githubusercontent.com" />
+  <link rel="dns-prefetch" href="//raw.githubusercontent.com" />
+  <link rel="prefetch" href={preferredDownloadHref} as="document" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
 <body class="overflow-hidden relative bg-background text-text-primary h-[100dvh] w-full">
