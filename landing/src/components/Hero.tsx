@@ -16,6 +16,12 @@ const allDownloads = content.downloads.map((item) => ({
 
 const preferredDownload = allDownloads.find((item) => item.recommended) ?? allDownloads[0];
 
+const dubaiPositioningPills = [
+  'Open to Dubai/UAE relocation',
+  'Enterprise-grade AI delivery',
+  '7+ years across AI + full stack',
+];
+
 // Icon map for social links
 const iconMap: Record<string, JSX.Element> = {
   linkedin: (
@@ -233,6 +239,23 @@ export default function Hero() {
             </motion.p>
           </div>
 
+          <div className="overflow-hidden w-full px-4 mb-4 md:mb-6">
+            <motion.ul
+              variants={revealVariant}
+              className="flex flex-wrap items-center justify-center gap-2.5 md:gap-3"
+              aria-label="Dubai positioning highlights"
+            >
+              {dubaiPositioningPills.map((pill) => (
+                <li
+                  key={pill}
+                  className="inline-flex items-center rounded-full border border-foreground/16 bg-foreground/6 px-3.5 py-1.5 text-[10px] md:text-xs uppercase tracking-[0.12em] text-text-primary"
+                >
+                  {pill}
+                </li>
+              ))}
+            </motion.ul>
+          </div>
+
           {/* Certification Badges — Cinematic 3D Interactive */}
           <div className="mb-6 md:mb-8 w-full">
             <CertBadges isVisible={animationsStarted} />
@@ -283,7 +306,7 @@ export default function Hero() {
 
           <div className="overflow-hidden mt-4 w-full flex justify-center px-6">
             <motion.p variants={revealVariant} className="text-xs md:text-sm text-text-muted text-center">
-              Fast track: <span className="text-foreground/90">{preferredDownload.label}</span> ·
+              Fast track: <span className="text-foreground/90">{preferredDownload.label}</span> · CET-based with UAE overlap ·
               <button
                 type="button"
                 onClick={() => {
