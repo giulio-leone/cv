@@ -3,14 +3,54 @@ import { useRef } from 'react';
 import SpotlightCard from './SpotlightCard';
 
 const topCerts = [
-  'AWS GenAI Developer Pro',
-  'Azure AI Engineer',
-  'Oracle OCI GenAI Pro',
-  'IBM Data Science Pro',
-  'MongoDB Associate Dev',
-  'Google Cybersecurity',
-  'Meta Back-End Dev',
-  'Oracle AI Vector Search',
+  {
+    name: 'AWS GenAI Developer Pro',
+    color: 'rgba(255, 153, 0, 0.3)',
+    border: 'rgba(255, 153, 0, 0.5)',
+    icon: <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'Azure AI Engineer',
+    color: 'rgba(0, 120, 212, 0.3)',
+    border: 'rgba(0, 120, 212, 0.5)',
+    icon: <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2M15 2H9c-.6 0-1 .4-1 1v2c0 .6.4 1 1 1h6c.6 0 1-.4 1-1V3c0-.6-.4-1-1-1zM12 11h.01M12 15h.01M12 19h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'Oracle OCI GenAI Pro',
+    color: 'rgba(248, 0, 0, 0.3)',
+    border: 'rgba(248, 0, 0, 0.5)',
+    icon: <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'IBM Data Science Pro',
+    color: 'rgba(5, 48, 173, 0.3)',
+    border: 'rgba(5, 48, 173, 0.5)',
+    icon: <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16zM3.27 6.96L12 12.01l8.73-5.05M12 22.08V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'MongoDB Associate Dev',
+    color: 'rgba(19, 170, 82, 0.3)',
+    border: 'rgba(19, 170, 82, 0.5)',
+    icon: <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'Google Cybersecurity',
+    color: 'rgba(66, 133, 244, 0.3)',
+    border: 'rgba(66, 133, 244, 0.5)',
+    icon: <path d="M12 2v20M2 12h20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'Meta Back-End Dev',
+    color: 'rgba(6, 104, 225, 0.3)',
+    border: 'rgba(6, 104, 225, 0.5)',
+    icon: <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
+  {
+    name: 'Oracle AI Vector Search',
+    color: 'rgba(248, 0, 0, 0.3)',
+    border: 'rgba(248, 0, 0, 0.5)',
+    icon: <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+  },
 ];
 
 const categories = [
@@ -78,12 +118,19 @@ export default function Certifications() {
           className="flex flex-wrap justify-center gap-3"
         >
           {topCerts.map((cert) => (
-            <span
-              key={cert}
-              className="px-4 py-2 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-white/10 text-text-muted hover:border-white/40 hover:text-white transition-colors duration-300 cursor-default"
+            <div
+              key={cert.name}
+              className="flex items-center gap-3 px-4 py-2 rounded-full text-xs font-semibold tracking-wide bg-white/5 border border-white/10 text-text-muted hover:text-white transition-all duration-300 cursor-default shadow-lg"
+              style={{
+                boxShadow: `inset 0 0 10px ${cert.color}, 0 0 15px ${cert.color}`,
+                borderColor: cert.border
+              }}
             >
-              {cert}
-            </span>
+              <svg viewBox="0 0 24 24" className="w-4 h-4" style={{ color: cert.border }}>
+                {cert.icon}
+              </svg>
+              {cert.name}
+            </div>
           ))}
           <a
             href="https://github.com/giulio-leone/cv/blob/main/data/certifications.json"

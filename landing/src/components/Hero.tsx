@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform, useMotionValue, useSpring, useAnimation } from 'framer-motion';
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import MagneticButton from './MagneticButton';
 
 export default function Hero() {
@@ -29,6 +29,15 @@ export default function Hero() {
 
   const springRotateX = useSpring(rotateX, { stiffness: 100, damping: 30 });
   const springRotateY = useSpring(rotateY, { stiffness: 100, damping: 30 });
+
+  // Only apply 3D transform if on desktop to avoid mobile glitches
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const handleResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -85,10 +94,14 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center pt-20 px-6 overflow-hidden perspective-[1000px]"
+      className="relative min-h-[100dvh] flex items-center justify-center pt-20 px-6 overflow-hidden perspective-[1000px]"
     >
       <motion.div
-        style={{ y, opacity, rotateX: springRotateX, rotateY: springRotateY }}
+        style={{
+          y,
+          opacity,
+          ...(isDesktop ? { rotateX: springRotateX, rotateY: springRotateY } : {})
+        }}
         className="text-center z-10 max-w-5xl mx-auto transform-style-3d relative"
       >
         <motion.div
@@ -135,27 +148,23 @@ export default function Hero() {
           {/* Actions - Using Magnetic Buttons */}
           <div className="flex flex-col sm:flex-row gap-6 justify-center overflow-hidden pt-4">
             <motion.div variants={revealVariant} className="z-20 relative">
-              <MagneticButton>
-                <a
-                  href="https://github.com/giulio-leone/cv/raw/main/output/cv-en.pdf"
-                  className="inline-flex items-center justify-center px-10 py-5 bg-white text-background font-bold rounded-full hover:bg-white/90 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] uppercase tracking-wide text-sm gap-3"
-                >
-                  <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
-                  </svg>
-                  Download Résumé
-                </a>
+              <MagneticButton
+                href="https://github.com/giulio-leone/cv/raw/main/output/cv-en.pdf"
+                className="!inline-flex items-center justify-center px-10 py-5 bg-white text-background font-bold rounded-full hover:bg-white/90 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.3)] hover:shadow-[0_0_60px_rgba(255,255,255,0.5)] uppercase tracking-wide text-sm gap-3"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 4V16M12 16L8 12M12 16L16 12M4 20H20" stroke="currentColor" strokeWidth="2" strokeLinecap="square" strokeLinejoin="miter" />
+                </svg>
+                Download Résumé
               </MagneticButton>
             </motion.div>
 
             <motion.div variants={revealVariant} className="z-20 relative">
-              <MagneticButton>
-                <a
-                  href="#downloads"
-                  className="inline-flex items-center justify-center px-10 py-5 border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm"
-                >
-                  Alternate Versions
-                </a>
+              <MagneticButton
+                href="#downloads"
+                className="!inline-flex items-center justify-center px-10 py-5 border border-white/20 text-white font-semibold rounded-full hover:bg-white/5 transition-colors glass-panel backdrop-blur-md uppercase tracking-wide text-sm"
+              >
+                Alternate Versions
               </MagneticButton>
             </motion.div>
           </div>

@@ -9,10 +9,10 @@ interface MagneticButtonProps {
 }
 
 export default function MagneticButton({ children, className = '', href, onClick }: MagneticButtonProps) {
-    const ref = useRef<HTMLDivElement>(null);
+    const ref = useRef<HTMLElement>(null);
     const [position, setPosition] = useState({ x: 0, y: 0 });
 
-    const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMouse = (e: React.MouseEvent<HTMLElement>) => {
         const { clientX, clientY } = e;
         const { height, width, left, top } = ref.current!.getBoundingClientRect();
         const middleX = clientX - (left + width / 2);
@@ -24,30 +24,27 @@ export default function MagneticButton({ children, className = '', href, onClick
         setPosition({ x: 0, y: 0 });
     };
 
-    const content = (
-        <motion.div
-            ref={ref}
-            onMouseMove={handleMouse}
-            onMouseLeave={reset}
-            animate={{ x: position.x, y: position.y }}
-            transition={{ type: 'spring', stiffness: 150, damping: 15, mass: 0.1 }}
-            className={`relative flex items-center justify-center magnetic ${className}`}
-        >
-            {children}
-        </motion.div>
-    );
+    const commonProps = {
+        ref: ref as any,
+        onMouseMove: handleMouse,
+        onMouseLeave: reset,
+        animate: { x: position.x, y: position.y },
+        transition: { type: 'spring' as any, stiffness: 150, damping: 15, mass: 0.1 },
+        onClick: onClick,
+        className: `relative flex items-center justify-center magnetic inline-block outline-none ${className}`
+    };
 
     if (href) {
         return (
-            <a href={href} onClick={onClick} className="inline-block outline-none">
-                {content}
-            </a>
+            <motion.a href={href} {...commonProps}>
+                {children}
+            </motion.a>
         );
     }
 
     return (
-        <button onClick={onClick} className="inline-block outline-none">
-            {content}
-        </button>
+        <motion.button {...commonProps}>
+            {children}
+        </motion.button>
     );
 }
