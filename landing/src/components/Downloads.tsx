@@ -1,6 +1,7 @@
 import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 import SpotlightCard from './SpotlightCard';
+import { EASE_OUT_QUART } from '../lib/motion';
 
 const downloads = [
   {
@@ -61,7 +62,7 @@ export default function Downloads() {
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+          transition={{ duration: 0.8, ease: EASE_OUT_QUART }}
           className="text-4xl md:text-5xl font-extrabold text-center mb-16 text-gradient lowercase tracking-tight"
         >
           Documentation.
@@ -73,7 +74,7 @@ export default function Downloads() {
               key={d.href}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: i * 0.1, duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
+              transition={{ delay: i * 0.1, duration: 0.8, ease: EASE_OUT_QUART }}
               className="group transition-all duration-500 hover:-translate-y-2 h-full"
             >
               <SpotlightCard

@@ -2,19 +2,45 @@
 import '../styles/global.css'
 import CustomCursor from '../components/CustomCursor'
 import AuroraBackground from '../components/AuroraBackground'
+import ThemeToggle from '../components/ThemeToggle'
 import content from '../data/content.json'
 
 interface Props { title?: string }
 const { title = content.meta.siteTitle } = Astro.props
-const base = import.meta.env.BASE_URL
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark" data-theme-mode="auto">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script is:inline>
+    (() => {
+      const storageKey = 'cv-theme-mode';
+      const hasStorage = typeof window !== 'undefined' && 'localStorage' in window;
+
+      const resolveTheme = (mode) => {
+        if (mode === 'light' || mode === 'dark') return mode;
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+
+      try {
+        const storedMode = hasStorage ? window.localStorage.getItem(storageKey) : null;
+        const mode = storedMode === 'light' || storedMode === 'dark' || storedMode === 'auto'
+          ? storedMode
+          : 'auto';
+
+        document.documentElement.dataset.themeMode = mode;
+        document.documentElement.dataset.theme = resolveTheme(mode);
+      } catch {
+        document.documentElement.dataset.themeMode = 'auto';
+        document.documentElement.dataset.theme = resolveTheme('auto');
+      }
+    })();
+  </script>
   <title>{title}</title>
   <meta name="description" content={content.meta.siteDescription} />
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f7fb" />
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05070d" />
   <meta property="og:title" content={content.meta.ogTitle} />
   <meta property="og:description" content={content.meta.ogDescription} />
   <meta property="og:type" content="website" />
@@ -27,7 +53,7 @@ const base = import.meta.env.BASE_URL
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
 </head>
-<body class="overflow-hidden relative bg-background h-[100dvh] w-full">
+<body class="overflow-hidden relative bg-background text-text-primary h-[100dvh] w-full">
   {/* Global Preloader for true Awwwards feel - Vanilla JS to avoid React Hydration FOUC */}
   <div id="global-preloader" class="fixed inset-0 z-[99999] bg-background flex flex-col items-center justify-center transition-transform duration-[1.2s] ease-[cubic-bezier(0.76,0,0.24,1)]">
     <div class="overflow-hidden">
@@ -45,6 +71,7 @@ const base = import.meta.env.BASE_URL
   <div class="blueprint-grid pointer-events-none" aria-hidden="true"></div>
   {/* Custom fluid cursor */}
   <CustomCursor client:load />
+  <ThemeToggle client:load />
   
   <slot />
 
@@ -56,9 +83,22 @@ const base = import.meta.env.BASE_URL
       if (!preloader || !counter) return;
 
       let progress = 0;
+      let revealTimeout = 0;
+      let counterSlideTimeout = 0;
+      let preloaderSlideTimeout = 0;
+      let interval = 0;
+
+      const cleanup = () => {
+        clearInterval(interval);
+        clearTimeout(revealTimeout);
+        clearTimeout(counterSlideTimeout);
+        clearTimeout(preloaderSlideTimeout);
+      };
+
+      window.addEventListener('pagehide', cleanup, { once: true });
       
       // Initial Reveal of counter
-      setTimeout(() => {
+      revealTimeout = window.setTimeout(() => {
         counter.style.transform = 'translateY(0)';
       }, 50);
 
@@ -67,7 +107,7 @@ const base = import.meta.env.BASE_URL
         counter.innerText = progress.toString().padStart(3, '0');
       };
 
-      const interval = setInterval(() => {
+      interval = window.setInterval(() => {
         progress += Math.floor(Math.random() * 4) + 1; // slow increment for effect
         if (progress >= 100) {
           progress = 100;
@@ -75,14 +115,15 @@ const base = import.meta.env.BASE_URL
           updateCounter();
           
           // Slide counter down
-          setTimeout(() => {
+          counterSlideTimeout = window.setTimeout(() => {
             counter.style.transform = 'translateY(100%)';
             // Slide preloader up
-            setTimeout(() => {
+            preloaderSlideTimeout = window.setTimeout(() => {
               preloader.style.transform = 'translateY(-100%)';
               // Dispatch event to start hero animations
-              (window as any).preloaderDone = true;
+              window.preloaderDone = true;
               window.dispatchEvent(new CustomEvent('preloaderComplete'));
+              cleanup();
             }, 600);
           }, 400);
         } else {

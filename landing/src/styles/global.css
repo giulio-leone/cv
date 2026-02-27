@@ -1,16 +1,60 @@
 @import "tailwindcss";
 
+:root {
+  color-scheme: light;
+  --theme-bg: #f5f7fb;
+  --theme-fg: #0f1117;
+  --theme-surface: rgba(10, 14, 24, 0.04);
+  --theme-glass: rgba(255, 255, 255, 0.62);
+  --theme-glass-border: rgba(10, 14, 24, 0.12);
+  --theme-accent: #0f1117;
+  --theme-accent-2: #5e6a84;
+  --theme-text-primary: #111827;
+  --theme-text-muted: #5f6b82;
+  --theme-success: #0f1117;
+  --selection-bg: rgba(15, 17, 23, 0.16);
+  --selection-fg: #0f1117;
+  --grid-line: rgba(10, 14, 24, 0.07);
+  --gradient-start: #0f1117;
+  --gradient-end: #6d7588;
+  --aurora-violet: rgba(124, 58, 237, 0.52);
+  --aurora-cyan: rgba(56, 189, 248, 0.42);
+  --aurora-rose: rgba(244, 63, 94, 0.32);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --theme-bg: #05070d;
+  --theme-fg: #f0f3ff;
+  --theme-surface: rgba(255, 255, 255, 0.03);
+  --theme-glass: rgba(255, 255, 255, 0.04);
+  --theme-glass-border: rgba(255, 255, 255, 0.09);
+  --theme-accent: #ffffff;
+  --theme-accent-2: #8b93ab;
+  --theme-text-primary: #eff3ff;
+  --theme-text-muted: #8d96b3;
+  --theme-success: #ffffff;
+  --selection-bg: rgba(255, 255, 255, 0.2);
+  --selection-fg: #ffffff;
+  --grid-line: rgba(255, 255, 255, 0.05);
+  --gradient-start: #ffffff;
+  --gradient-end: #a0a8bf;
+  --aurora-violet: rgba(124, 58, 237, 0.72);
+  --aurora-cyan: rgba(56, 189, 248, 0.6);
+  --aurora-rose: rgba(244, 63, 94, 0.45);
+}
+
 @theme {
-  --color-background: #000000;
-  --color-foreground: #f0f0f0;
-  --color-surface: rgba(255, 255, 255, 0.02);
-  --color-glass: rgba(255, 255, 255, 0.03);
-  --color-glass-border: rgba(255, 255, 255, 0.05);
-  --color-accent: #ffffff;
-  --color-accent-2: #888888;
-  --color-text-primary: #f0f0f0;
-  --color-text-muted: #888888;
-  --color-success: #ffffff;
+  --color-background: var(--theme-bg);
+  --color-foreground: var(--theme-fg);
+  --color-surface: var(--theme-surface);
+  --color-glass: var(--theme-glass);
+  --color-glass-border: var(--theme-glass-border);
+  --color-accent: var(--theme-accent);
+  --color-accent-2: var(--theme-accent-2);
+  --color-text-primary: var(--theme-text-primary);
+  --color-text-muted: var(--theme-text-muted);
+  --color-success: var(--theme-success);
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Playfair Display', Georgia, serif;
 }
@@ -35,12 +79,12 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  background: var(--selection-bg);
+  color: var(--selection-fg);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -75,13 +119,29 @@ body {
   pointer-events: none;
   z-index: 1;
   /* Below content, above base color */
-  opacity: 0.15;
+  opacity: 0.08;
   background-size: 50px 50px;
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
   mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 80%);
   -webkit-mask-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 80%);
+}
+
+:root[data-theme='dark'] .blueprint-grid {
+  opacity: 0.15;
+}
+
+.theme-toggle-surface {
+  background: color-mix(in srgb, var(--color-background) 62%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-foreground) 18%, transparent);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 36px color-mix(in srgb, var(--color-background) 52%, transparent);
+}
+
+.theme-toggle-surface:hover {
+  border-color: color-mix(in srgb, var(--color-foreground) 30%, transparent);
 }
 
 /* Base Infinite Marquee CSS */
@@ -130,3 +190,14 @@ body {
 .animate-aurora-1 { animation: aurora-1 15s ease-in-out infinite; will-change: transform; }
 .animate-aurora-2 { animation: aurora-2 18s ease-in-out 2s infinite; will-change: transform; }
 .animate-aurora-3 { animation: aurora-3 20s ease-in-out 1s infinite; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
