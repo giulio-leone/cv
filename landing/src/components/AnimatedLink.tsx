@@ -27,11 +27,11 @@ export default function AnimatedLink({ href, target, rel, children, className = 
             onMouseLeave={() => setIsHovered(false)}
         >
             {icon && (
-                <span className="relative z-10 transition-transform duration-300 group-hover:scale-110">
+                <span className="relative z-10 transition-transform duration-300 will-change-transform group-hover:scale-110">
                     {icon}
                 </span>
             )}
-            <div className="relative overflow-hidden inline-[flex]">
+            <div className="relative overflow-hidden inline-flex">
                 {/* Top Text (moves up) */}
                 <div className="flex">
                     {chars.map((char, i) => (

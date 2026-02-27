@@ -18,41 +18,20 @@ function CertCard({ cert, index }: { cert: CertData; index: number }) {
       initial={{ opacity: 0, y: 20, scale: 0.9 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, delay: index * 0.07, ease: [0.16, 1, 0.3, 1] }}
-      whileHover={{ scale: 1.08, y: -5 }}
+      whileHover={{ scale: 1.04, y: -3 }}
     >
       <div
-        className="relative flex flex-col items-center gap-2.5 px-4 py-4 md:px-5 md:py-5 rounded-2xl border overflow-hidden transition-all duration-500 min-w-[100px] md:min-w-[120px]"
-        style={{
-          borderColor: `${cert.color}50`,
-          background: `linear-gradient(160deg, ${cert.color}40, ${cert.color}18, rgba(255,255,255,0.03) 80%)`,
-          boxShadow: `0 0 30px ${cert.color}20, inset 0 1px 0 ${cert.color}25`,
-        }}
+        className="relative flex flex-col items-center gap-2.5 px-4 py-4 md:px-5 md:py-5 rounded-2xl border border-foreground/8 bg-foreground/[0.03] overflow-hidden transition-all duration-300 min-w-[100px] md:min-w-[120px] hover:border-foreground/14 hover:bg-foreground/[0.06]"
       >
-        {/* Persistent glow */}
-        <div
-          className="absolute inset-0 rounded-2xl pointer-events-none transition-opacity duration-700 opacity-70 group-hover:opacity-100"
-          style={{ boxShadow: `0 0 40px ${cert.color}28, inset 0 0 20px ${cert.color}12` }}
-        />
-
-        {/* Shine sweep */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 pointer-events-none overflow-hidden transition-opacity duration-300">
-          <div
-            className="absolute inset-0 -translate-x-full group-hover:translate-x-[200%] transition-transform duration-1000 ease-out"
-            style={{ background: `linear-gradient(90deg, transparent, ${cert.color}45, transparent)` }}
-          />
-        </div>
-
-        {/* Prominent Logo */}
-        <div className="relative z-10 w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-xl transition-all duration-500 group-hover:scale-110"
-          style={{ background: `${cert.color}35`, boxShadow: `0 0 24px ${cert.color}25` }}
-        >
-          <svg viewBox="0 0 24 24" className="w-5 h-5 md:w-6 md:h-6 transition-all duration-300" fill={cert.color} style={{ filter: 'brightness(1.3) saturate(1.2)' }}>
+        {/* Logo */}
+        <div className="relative z-10 w-9 h-9 md:w-11 md:h-11 flex items-center justify-center rounded-xl bg-foreground/[0.06] transition-colors duration-300 group-hover:bg-foreground/[0.10] will-change-transform">
+          <svg viewBox="0 0 24 24" className="w-5 h-5 md:w-6 md:h-6 text-foreground/70 group-hover:text-foreground transition-colors duration-300" fill="currentColor">
             <path d={cert.logo} />
           </svg>
         </div>
 
         {/* Cert Name */}
-        <span className="relative z-10 text-[11px] md:text-xs font-bold text-foreground transition-colors text-center leading-tight">
+        <span className="relative z-10 text-[11px] md:text-xs font-semibold text-foreground/80 group-hover:text-foreground transition-colors text-center leading-tight">
           {cert.name}
         </span>
       </div>
@@ -108,7 +87,7 @@ export default function CertBadges({ isVisible }: CertBadgesProps) {
         <a
           href={content.certifications.viewAllUrl}
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           className="group inline-flex items-center gap-2 text-xs text-text-muted hover:text-foreground/80 transition-all duration-300 uppercase tracking-widest font-medium"
         >
           <span className="font-mono text-foreground/70 group-hover:text-foreground transition-colors">{count}+</span>
