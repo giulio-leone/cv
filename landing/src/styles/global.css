@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 @theme {
-  --color-background: #111827;
+  --color-background: #0c0c18;
   --color-foreground: #f0f0f0;
   --color-surface: rgba(255, 255, 255, 0.04);
-  --color-glass: rgba(255, 255, 255, 0.06);
-  --color-glass-border: rgba(255, 255, 255, 0.10);
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
   --color-accent: #ffffff;
   --color-accent-2: #888888;
   --color-text-primary: #f0f0f0;
