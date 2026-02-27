@@ -1,5 +1,5 @@
 import { motion, useMotionValue, useSpring, useAnimation, useTransform, useReducedMotion } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState, type JSX } from 'react';
 import MagneticButton from './MagneticButton';
 import AnimatedLink from './AnimatedLink';
 import DownloadModal from './DownloadModal';
