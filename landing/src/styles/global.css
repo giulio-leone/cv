@@ -37,9 +37,9 @@
   --selection-fg: #ffffff;
   --gradient-start: #ffffff;
   --gradient-end: #a1a1aa;
-  --premium-shell-bg: #111113;
+  --premium-shell-bg: #0e0e10;
   --premium-shell-border: rgba(255, 255, 255, 0.08);
-  --premium-panel-bg: #161618;
+  --premium-panel-bg: #131315;
 }
 
 @theme {
@@ -135,14 +135,14 @@ body {
 
 :root[data-theme='dark'] .premium-shell {
   background:
-    linear-gradient(168deg, rgba(255, 255, 255, 0.07) 0%, transparent 40%, rgba(255, 255, 255, 0.03) 100%),
+    linear-gradient(168deg, rgba(255, 255, 255, 0.10) 0%, transparent 35%, rgba(255, 255, 255, 0.04) 100%),
     var(--premium-shell-bg);
-  border-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.07),
-    0 0 0 1px rgba(255, 255, 255, 0.04),
+    0 1px 0 rgba(255, 255, 255, 0.09),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
     0 12px 40px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .premium-panel {
@@ -152,12 +152,43 @@ body {
 
 :root[data-theme='dark'] .premium-panel {
   background:
-    linear-gradient(165deg, rgba(255, 255, 255, 0.07) 0%, transparent 50%, rgba(255, 255, 255, 0.02) 100%),
+    linear-gradient(165deg, rgba(255, 255, 255, 0.09) 0%, transparent 45%, rgba(255, 255, 255, 0.03) 100%),
     var(--premium-panel-bg);
-  border-color: rgba(255, 255, 255, 0.10);
+  border-color: rgba(255, 255, 255, 0.12);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.07),
-    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    0 1px 0 rgba(255, 255, 255, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+/* Light sweep on panel hover */
+.premium-shell,
+.premium-panel {
+  position: relative;
+  overflow: hidden;
+}
+
+.premium-shell::after,
+.premium-panel::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.06) 45%,
+    rgba(255, 255, 255, 0.12) 50%,
+    rgba(255, 255, 255, 0.06) 55%,
+    transparent 60%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.premium-shell:hover::after,
+.premium-panel:hover::after {
+  transform: translateX(100%);
 }
 
 /* Base Infinite Marquee CSS */
