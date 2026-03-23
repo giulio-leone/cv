@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper,sans]{moderncv}
+
+% --- STYLE ---
+\moderncvstyle{banking}
+\moderncvcolor{blue}
+
+% --- PACKAGES ---
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.78, top=1.6cm, bottom=1.2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet, nosep, leftmargin=1.5em, topsep=2pt}
+\usepackage{fontawesome5}
+\usepackage{etoolbox}
+
+% Add vertical space in the header between contact info lines
+\patchcmd{\makecvhead}{\begin{tabular}[b]}{\vspace{0.5em}\begin{tabular}[b]}{}{}
+
+% --- PERSONAL DATA ---
+\name{Giulio}{Leone}
+\title{Senior AI Engineer --- Generative AI \& LLM Systems}
+\address{Rome, Italy}{}{Relocating to UAE (Dubai / Abu Dhabi) --- Immediately Available}
+\phone[mobile]{+39~366~141~0914}
+\email{giulioleone097@gmail.com}
+\homepage{giulioleone.com}
+\social[linkedin]{giulioleone1}
+\extrainfo{\faWhatsapp~~WhatsApp / \faTelegram~~Telegram available \\ \faCodeBranch~~v4.0.0 --- Last updated: \today}
+% \photo[64pt][0.4pt]{picture} % UNCOMMENT TO ADD PHOTO (Recommended for Dubai)
+
+% --- DOCUMENT ---
+\begin{document}
+
+\makecvtitle
+
+% --- PROFESSIONAL SUMMARY ---
+\section{Professional Summary}
+\cvitem{}{Senior AI Engineer with \textbf{7+ years of experience} designing and deploying production Generative AI systems. Core expertise in \textbf{RAG architectures}, \textbf{Agentic AI}, \textbf{Generative UI}, and enterprise-grade LLM integration. Strong Full-Stack delivery capability (Python, React/Next.js) enabling end-to-end AI product development --- from model orchestration to user interface. Deployed at scale for a Tier-1 European FinTech (500K+ users), industrial IoT manufacturers, and institutional/public-sector organizations. \textbf{66+ technical certifications} including AWS, Microsoft Azure, Google, Oracle, IBM, MongoDB, and Neo4j. M.Sc.\ in Management Engineering (Digital Transformation) with research on Generative UI and embedding-free RAG systems.}
+
+% --- PROFESSIONAL EXPERIENCE ---
+\section{Professional Experience}
+
+\cventry{Jan 2020 -- Present}{Senior AI Engineer \& Technical Consultant}{Independent AI Consultancy --- 15+ Projects Delivered}{Rome, Italy}{}{
+Technical lead for AI architecture design and full-stack implementation across engagements for mid-to-large enterprises. Led cross-functional teams of 2--5 engineers. Client portfolio includes a \textbf{Tier-1 European FinTech} (500K+ users), \textbf{industrial IoT manufacturers}, and \textbf{Italian public-sector cultural institutions}.
+\vspace{0.3em}
+\begin{itemize}
+    \item \textbf{Institutional AI Deployment (Current):} Supporting a public-sector cultural pilot involving six museums in the Italian institutional museum system. Leading technical work across local-inference AI strategy, non-closed model approaches, backend/API architecture, database design, and cloud infrastructure planning. Contributing to a controlled, privacy-aware deployment model designed for institution-oriented adoption.
+    \item \textbf{Agentic AI \& Generative UI:} Architected a multi-agent OmniApp with autonomous AI agents and Generative UI, rendering React components in real-time via LLM orchestration (LangChain, Vercel AI SDK). Implemented fallback handling, streaming responses, and tool-use patterns. \textbf{Reduced UI development time by 40\%.}
+    \item \textbf{Enterprise RAG Systems:} Designed and deployed hybrid RAG pipelines (vector search + BM25 + iterative disambiguation) processing 50K+ documents for enterprise knowledge bases. \textbf{Reduced hallucination rate by 30\%} on customer-facing chatbots.
+    \item \textbf{Full-Stack Platform Delivery:} Built 5+ enterprise dashboards (React, Redux, Context API) with high-performance backends (Python FastAPI, Django). Achieved \textbf{P95 latency under 800ms} through Redis caching and CDN optimization.
+    \item \textbf{Legacy Modernization:} Led COBOL-to-Python migration of approximately 50K lines of code using AI-assisted translation workflows. \textbf{Improved rewrite velocity by 60\%.}
+    \item \textbf{AI-Augmented Development:} Integrated AI coding assistants into daily workflows for development, debugging, code review, and automated test generation, significantly accelerating delivery cycles.
+    \item \textbf{Cloud \& DevOps:} Designed CI/CD pipelines (GitHub Actions), containerized deployments (Docker, Kubernetes), and cloud infrastructure on Azure and AWS. Applied OWASP security standards.
+\end{itemize}
+}
+
+\cventry{2018 -- 2019}{Full-Stack Developer}{Freelance}{Rome, Italy}{}{
+Started career building web applications and delivering end-to-end solutions for small business clients.
+\vspace{0.3em}
+\begin{itemize}
+    \item Built 8+ client projects: responsive web applications (JavaScript, HTML/CSS, PHP), REST APIs (Node.js), and database-driven backends (MySQL, PostgreSQL).
+    \item Managed full project lifecycle from requirements gathering through deployment and maintenance.
+    \item Developed strong foundations in software architecture and client communication that enabled transition to AI-focused engineering.
+\end{itemize}
+}
+
+% --- KEY AI PROJECTS ---
+\section{Key AI Projects}
+\cvitem{\textbf{OmniApp --- Generative UI Platform}}{Multi-agent system rendering dynamic React interfaces in real-time via LLM orchestration. Stack: Next.js, Vercel AI SDK, LangChain. \textbf{40\% faster time-to-feature} vs.\ traditional development.}
+\cvitem{\textbf{Enterprise RAG Engine}}{Semantic search and Q\&A system for 50K+ enterprise documents. Hybrid vector + BM25 retrieval with iterative disambiguation. Stack: Pinecone, ChromaDB, Python. \textbf{30\% improvement in answer accuracy.}}
+\cvitem{\textbf{Industrial IoT Dashboard}}{Real-time monitoring platform for industrial sensor data. Stack: React, FastAPI, WebSocket, TimescaleDB. Sustained \textbf{10K+ data points/sec} with sub-200ms latency.}
+
+% --- TECHNICAL SKILLS ---
+\section{Technical Skills}
+\cvitem{\textbf{AI \& GenAI}}{LLM Integration (OpenAI, Anthropic, Cohere), LangChain, LangGraph, Vercel AI SDK, RAG (Vector + BM25 Hybrid), Agentic AI, CrewAI, Generative UI, Prompt Engineering, LLMOps, AI Evaluation \& Guardrails}
+\cvitem{\textbf{ML \& Data}}{Python, Pandas, NumPy, Scikit-learn, Keras, Pinecone, ChromaDB, Neo4j}
+\cvitem{\textbf{Full-Stack}}{React / Next.js, TypeScript, Angular, Vue.js, Tailwind CSS, Django, FastAPI, Node.js, Express, GraphQL, REST}
+\cvitem{\textbf{Cloud \& DevOps}}{AWS, Microsoft Azure, Docker, Kubernetes, GitHub Actions, Terraform, CI/CD}
+\cvitem{\textbf{Databases}}{PostgreSQL, MongoDB, Pinecone, ChromaDB, Neo4j, TimescaleDB, Redis}
+
+% --- EDUCATION ---
+\section{Education}
+\cventry{June 2026 (Distance Learning)}{M.Sc.\ in Management Engineering --- Digital Transformation}{Universit\`a Unimercatorum}{Italy}{GPA: 27/30 --- \textbf{Full-time available (thesis defense pending)}}{
+\begin{itemize}
+    \item \textbf{Thesis:} Framework for Generative UI and embedding-free RAG --- reducing computational cost and latency in enterprise AI systems.
+    \item \textbf{Research:} 2 papers submitted to international peer-reviewed journals.
+\end{itemize}
+}
+\vspace{0.3em}
+\cventry{2018 -- 2021}{B.Sc.\ in Management Engineering (L-9)}{Universit\`a Niccol\`o Cusano}{Italy}{}{
+Thesis on applied machine learning: K-Nearest Neighbors (KNN) algorithm for classification tasks.
+}
+
+% --- CERTIFICATIONS ---
+\section{Certifications (Selection from 66+)}
+\cvitem{\textbf{AI \& GenAI}}{AWS Certified Generative AI Developer -- Professional \,$\cdot$\, Microsoft Azure AI Engineer \,$\cdot$\, Oracle OCI Generative AI Professional \,$\cdot$\, IBM Multimodal GenAI Apps \,$\cdot$\, Oracle AI Agent Studio}
+\cvitem{\textbf{Data \& ML}}{IBM Data Science Professional \,$\cdot$\, Oracle OCI Data Science Professional \,$\cdot$\, Neo4j Graph Data Science \,$\cdot$\, Google Data Analytics}
+\cvitem{\textbf{Database}}{MongoDB Associate Developer \,$\cdot$\, Oracle AI Vector Search Professional \,$\cdot$\, Neo4j Certified Professional}
+\cvitem{\textbf{Security}}{Google Cybersecurity Professional \,$\cdot$\, Microsoft Security Foundations \,$\cdot$\, Oracle OCI Foundations}
+\cvitem{}{\small\textit{Complete list of 66+ certifications available at:} \texttt{github.com/giulio-leone/cv}}
+
+% --- LANGUAGES ---
+\section{Languages}
+\cvitemwithcomment{Italian}{Native speaker}{}
+\cvitemwithcomment{English}{C1 --- Advanced}{Daily professional use in international projects}
+
+% --- FOOTER ---
+\vfill
+\begin{center}
+    \footnotesize \textit{EU citizen --- Open to UAE work visa sponsorship --- Immediately available for relocation (0 days notice).}
+\end{center}
+
+\end{document}
