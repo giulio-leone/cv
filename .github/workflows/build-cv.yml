@@ -27,6 +27,7 @@ jobs:
             src/core/cv-it.tex
             src/core/cv-en.tex
             src/variants/dubai/cv-en-dubai.tex
+            src/variants/dubai/cv-en-dubai-ats.tex
           working_directory: .
           args: -interaction=nonstopmode -output-directory=output
 
@@ -38,6 +39,7 @@ jobs:
             output/cv-it.pdf
             output/cv-en.pdf
             output/cv-en-dubai.pdf
+            output/cv-en-dubai-ats.pdf
 
       - name: Commit updated PDFs
         if: github.ref == 'refs/heads/main' && github.event_name == 'push'
@@ -75,5 +77,6 @@ jobs:
             output/cv-en.pdf
             output/cv-it.pdf
             output/cv-en-dubai.pdf
+            output/cv-en-dubai-ats.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
